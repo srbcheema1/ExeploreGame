@@ -92,7 +92,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         levelwin=0;
         level = 1;
         moves=0;
-        movesLabel.setText("Score : "+Integer.toString(moves));
+        scoreLabel.setText("Score : "+Integer.toString(moves));
         
         for(int i=0;i<10;i++)
             for(int j=0;j<10;j++){
@@ -434,7 +434,7 @@ public class GamePannel4 extends javax.swing.JPanel {
     public void moveUpdate(){
         totalmoves++;
         moves++;
-        movesLabel.setText("Score : "+Integer.toString(moves));
+        scoreLabel.setText("Score : "+Integer.toString(moves));
     }//updates moves
     
     public void lastMove(){
@@ -484,7 +484,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         heading2 = new javax.swing.JLabel();
         heading3 = new javax.swing.JLabel();
         moveTeller = new javax.swing.JLabel();
-        movesLabel = new javax.swing.JLabel();
+        scoreLabel = new javax.swing.JLabel();
         helpButton = new javax.swing.JButton();
         undoButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
@@ -531,12 +531,12 @@ public class GamePannel4 extends javax.swing.JPanel {
         add(moveTeller);
         moveTeller.setBounds(160, 110, 130, 30);
 
-        movesLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
-        movesLabel.setForeground(new java.awt.Color(252, 236, 236));
-        movesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        movesLabel.setText("Score : 0");
-        add(movesLabel);
-        movesLabel.setBounds(630, 120, 180, 50);
+        scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
+        scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
+        scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        scoreLabel.setText("Score : 0");
+        add(scoreLabel);
+        scoreLabel.setBounds(630, 120, 180, 50);
 
         helpButton.setText("help");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
@@ -594,7 +594,7 @@ public class GamePannel4 extends javax.swing.JPanel {
     private void undoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoButtonActionPerformed
         
         moves=memoryMoves;
-        movesLabel.setText("Score : "+Integer.toString(moves));
+        scoreLabel.setText("Score : "+Integer.toString(moves));
         for(int i=0;i<10;i++){
             System.arraycopy(memoryBoard[i], 0, board[i], 0, 10);
         updateBox();
@@ -616,8 +616,8 @@ public class GamePannel4 extends javax.swing.JPanel {
     private javax.swing.JLabel heading3;
     private javax.swing.JButton helpButton;
     private javax.swing.JLabel moveTeller;
-    private javax.swing.JLabel movesLabel;
     private javax.swing.JButton newButton;
+    private javax.swing.JLabel scoreLabel;
     private javax.swing.JButton undoButton;
     // End of variables declaration//GEN-END:variables
 

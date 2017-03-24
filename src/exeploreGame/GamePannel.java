@@ -4,6 +4,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -17,15 +18,15 @@ public class GamePannel extends javax.swing.JPanel {
     Border nullborder = new LineBorder(Color.darkGray, 0);
     
     //gamepanels
-    public static HomePannel homePannel;
- //   public static GamePannel1 gamePannel1;
-    public static GamePannel2 gamePannel2;
-    //public static GamePannel3 gamePannel3;
-    public static GamePannel4 gamePannel4;
-    public static GamePannel5 gamePannel5;
-    public static GamePannel6 gamePannel6;
-//    public static GamePannel7 gamePannel7;
-    public static GamePannel8 gamePannel8;
+    public HomePannel homePannel;
+    public GamePannel1 gamePannel1;
+    public GamePannel2 gamePannel2;
+    public GamePannel3 gamePannel3;
+    public GamePannel4 gamePannel4;
+    public GamePannel5 gamePannel5;
+    public GamePannel6 gamePannel6;
+    public GamePannel7 gamePannel7;
+    public GamePannel8 gamePannel8;
     
     
     CardLayout card=new CardLayout();//layout for controlPannel
@@ -57,14 +58,20 @@ public class GamePannel extends javax.swing.JPanel {
     public void createGames(){
         homePannel=new HomePannel(this);
         controlPannel.add(homePannel,"homePannel");
+        gamePannel1=new GamePannel1(this);
+        controlPannel.add(gamePannel1,"gamePannel1");
         gamePannel2=new GamePannel2(this);
         controlPannel.add(gamePannel2,"gamePannel2");
+        gamePannel3=new GamePannel3(this);
+        controlPannel.add(gamePannel3,"gamePannel3");
         gamePannel4=new GamePannel4(this);
         controlPannel.add(gamePannel4,"gamePannel4");
         gamePannel5=new GamePannel5(this);
         controlPannel.add(gamePannel5,"gamePannel5");
         gamePannel6=new GamePannel6(this);
         controlPannel.add(gamePannel6,"gamePannel6");
+        gamePannel7=new GamePannel7(this);
+        controlPannel.add(gamePannel7,"gamePannel7");
         gamePannel8=new GamePannel8(this);
         controlPannel.add(gamePannel8,"gamePannel8");
     } //creates Games
@@ -77,14 +84,31 @@ public class GamePannel extends javax.swing.JPanel {
         switch(index){
             case 1:
                 cardPannel=1;
+                if(gamePannel1.score<30){
+                    card.show(controlPannel,"gamePannel1");
+                }    
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                }
                 break;
             case 2:
                 cardPannel=2;
-                card.show(controlPannel,"gamePannel2");
-                gamePannel2.getFocus();
+                if(gamePannel2.score<45){
+                    card.show(controlPannel,"gamePannel2");
+                    gamePannel2.getFocus();
+                }
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                } 
                 break;
             case 3:
                 cardPannel=3;
+                if(gamePannel3.score<30){
+                    card.show(controlPannel,"gamePannel3");
+                }
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                } 
                 break;
             case 4:
                 cardPannel=4;
@@ -103,11 +127,23 @@ public class GamePannel extends javax.swing.JPanel {
                 break;
             case 7:
                 cardPannel=7;
+                if(gamePannel7.score<50){
+                    card.show(controlPannel,"gamePannel7");
+                    gamePannel7.getFocus();
+                }
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                }              
                 break;
             case 8:
                 cardPannel=8;
-                card.show(controlPannel,"gamePannel8");
-                gamePannel8.getFocus();
+                if(gamePannel8.score<90){
+                    card.show(controlPannel,"gamePannel8");
+                    gamePannel8.getFocus();
+                }
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                }
                 break;
         }
         
