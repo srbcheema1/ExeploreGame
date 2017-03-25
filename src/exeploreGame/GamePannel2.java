@@ -186,7 +186,6 @@ public class GamePannel2 extends javax.swing.JPanel {
                            ans=e;
                            break;
                    }
-        System.out.println(ans);
         
     }
     

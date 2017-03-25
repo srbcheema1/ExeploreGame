@@ -412,9 +412,9 @@ public class GamePannel8 extends javax.swing.JPanel {
 
         heading.setFont(new java.awt.Font("DejaVu Serif", 1, 48)); // NOI18N
         heading.setForeground(new java.awt.Color(255, 25, 255));
-        heading.setText("Sokoban");
+        heading.setText("Push Box");
         add(heading);
-        heading.setBounds(220, 0, 250, 90);
+        heading.setBounds(180, 0, 300, 90);
 
         javax.swing.GroupLayout controlPannelLayout = new javax.swing.GroupLayout(controlPannel);
         controlPannel.setLayout(controlPannelLayout);

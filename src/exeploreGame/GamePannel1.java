@@ -81,7 +81,7 @@ public class GamePannel1 extends javax.swing.JPanel {
                 sum++;
             }
         
-        System.out.println(ctfill());
+        
         if (marked[4]==0 && ctfill()==0) index=4;
         else if (marked[4]==0 && ctfill()==1) index=4;
 
@@ -149,7 +149,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         else{
             randomfirst();
             this.turn=-turn;
-             System.out.print("BREAK");
+            
             return; 
             
         }
@@ -258,8 +258,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         }
         else if(ctfill()<9)
             randomfirst();
-        else
-            System.out.print("BREAK");   
+             
     }
     
     public void resete(){
@@ -505,7 +504,6 @@ public class GamePannel1 extends javax.swing.JPanel {
     private void box9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box9ActionPerformed
         if(checkboard(2,2)){
             board[2][2]=turn;
-            //System.out.println("A clicked"+turn);
 
             box9.setText("O");
 
@@ -515,7 +513,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             //  randomfirst();
             //else
             movegen(turn);
-            //System.out.println("B clicked"+turn);
             showe();
         }
         else JOptionPane.showMessageDialog(null,"Position filled");
@@ -524,7 +521,6 @@ public class GamePannel1 extends javax.swing.JPanel {
     private void box1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1ActionPerformed
         if(checkboard(0,0)){
             board[0][0]=turn;
-            //System.out.println("A clicked"+turn);
 
             box1.setText("O");
             turn=-turn;
@@ -533,7 +529,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             // randomfirst();
             //else
             movegen(turn);
-            // System.out.println("B clicked"+turn);
             showe();
         }
         else JOptionPane.showMessageDialog(null,"Position filled");
@@ -542,7 +537,6 @@ public class GamePannel1 extends javax.swing.JPanel {
     private void box2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box2ActionPerformed
         if(checkboard(0,1)){
             board[0][1]=turn;
-            //System.out.println("A clicked"+turn);
 
             box2.setText("O");
             turn=-turn;
@@ -551,7 +545,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             //  randomfirst();
             //else
             movegen(turn);
-            // System.out.println("B clicked"+turn);
             showe();
         }
         else JOptionPane.showMessageDialog(null,"Position filled");
@@ -560,7 +553,6 @@ public class GamePannel1 extends javax.swing.JPanel {
     private void box3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box3ActionPerformed
         if(checkboard(0,2)){
             board[0][2]=turn;
-            //System.out.println("A clicked"+turn);
 
             box3.setText("O");
             turn=-turn;
@@ -569,7 +561,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             //  randomfirst();
             //else
             movegen(turn);
-            // System.out.println("B clicked"+turn);
             showe();
         }
         else JOptionPane.showMessageDialog(null,"Position filled");
@@ -578,7 +569,6 @@ public class GamePannel1 extends javax.swing.JPanel {
     private void box4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box4ActionPerformed
         if(checkboard(1,0)){
             board[1][0]=turn;
-            //System.out.println("A clicked"+turn);
 
             box4.setText("O");
             turn=-turn;
@@ -587,7 +577,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             //  randomfirst();
             //else
             movegen(turn);
-            // System.out.println("B clicked"+turn);
             showe();
         }
         else JOptionPane.showMessageDialog(null,"Position filled");
@@ -597,7 +586,6 @@ public class GamePannel1 extends javax.swing.JPanel {
 
         if(checkboard(1,1)){
             board[1][1]=turn;
-            //System.out.println("A clicked"+turn);
 
             box5.setText("O");
             turn=-turn;
@@ -606,7 +594,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             //randomfirst();
             //else
             movegen(turn);
-            // System.out.println("B clicked"+turn);
             showe();
         }
         else
@@ -616,7 +603,6 @@ public class GamePannel1 extends javax.swing.JPanel {
     private void box6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box6ActionPerformed
         if(checkboard(1,2)){
             board[1][2]=turn;
-            //System.out.println("A clicked"+turn);
 
             box6.setText("O");
             turn=-turn;
@@ -625,7 +611,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             //  randomfirst();
             //else
             movegen(turn);
-            // System.out.println("B clicked"+turn);
             showe();
         }
         else JOptionPane.showMessageDialog(null,"Position filled");
@@ -634,7 +619,6 @@ public class GamePannel1 extends javax.swing.JPanel {
     private void box7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box7ActionPerformed
         if(checkboard(2,0)){
             board[2][0]=turn;
-            //System.out.println("A clicked"+turn);
 
             box7.setText("O");
             turn=-turn;
@@ -643,7 +627,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             //  randomfirst();
             //else
             movegen(turn);
-            //System.out.println("B clicked"+turn);
             showe();
         }
         else JOptionPane.showMessageDialog(null,"Position filled");

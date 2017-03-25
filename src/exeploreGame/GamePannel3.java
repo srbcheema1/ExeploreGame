@@ -72,7 +72,6 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
                     board[i][j]=1;
                     sum=i+j;
                     sub=i-j;
-                    System.out.println("i="+i+"j="+j);
                     for(int k=0;k<8;k++){
                         for(int l=0;l<8;l++){
                             if(board[k][l]!=0&&(k!=i||l!=j)){
@@ -83,7 +82,6 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
                                 board[k][l]=2;
                                 board[i][j]=2;
                                 queencount--;
-                                //System.out.println("k="+k+"l="+l);
                             }
                            
                                    
@@ -159,7 +157,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
             }
         });
         add(resetButton);
-        resetButton.setBounds(720, 410, 70, 29);
+        resetButton.setBounds(710, 410, 80, 29);
 
         helpButton.setForeground(new java.awt.Color(1, 1, 1));
         helpButton.setText("help");
@@ -169,7 +167,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
             }
         });
         add(helpButton);
-        helpButton.setBounds(720, 470, 70, 29);
+        helpButton.setBounds(710, 470, 80, 29);
 
         jPanel2.setLayout(null);
 
@@ -221,7 +219,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
     }//GEN-LAST:event_resetButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(null,"* place 8 queens on board\n"
+        JOptionPane.showMessageDialog(jPanel2,"* place 8 queens on board\n"
                                             +"* no queen must be in target position w.r.t other queen\n"
                                             +"* 30 points will be awarded for finishing the game\n"
                                             ,"Instructions"

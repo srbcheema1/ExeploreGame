@@ -26,11 +26,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="19" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Sokoban"/>
+        <Property name="text" type="java.lang.String" value="Push Box"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="220" y="0" width="250" height="90"/>
+          <AbsoluteConstraints x="180" y="0" width="300" height="90"/>
         </Constraint>
       </Constraints>
     </Component>
