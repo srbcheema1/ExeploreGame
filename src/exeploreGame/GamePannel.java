@@ -51,6 +51,7 @@ public class GamePannel extends javax.swing.JPanel {
         TaskBarPannel.setBackground(new Color(34,34,34));
         controlPannel.setLayout(card);
         clockTimer = new Timer(1000,new ClockUpdater());
+        userIdLabel.setText(ExeploreGame.userId);
         
         createGames();//creates games
         
@@ -104,8 +105,9 @@ public class GamePannel extends javax.swing.JPanel {
                 break;
             case 2:
                 cardPannel=2;
-                if(gamePannel2.score<45){
+                if(gamePannel2.bestScore<45){
                     card.show(controlPannel,"gamePannel2");
+                    gamePannel2.resetLevel();
                     gamePannel2.getFocus();
                 }
                 else{
@@ -138,7 +140,7 @@ public class GamePannel extends javax.swing.JPanel {
                 break;
             case 7:
                 cardPannel=7;
-                if(gamePannel7.score<50){
+                if(gamePannel7.score<60){
                     card.show(controlPannel,"gamePannel7");
                     gamePannel7.getFocus();
                 }
@@ -148,7 +150,7 @@ public class GamePannel extends javax.swing.JPanel {
                 break;
             case 8:
                 cardPannel=8;
-                if(gamePannel8.score<90){
+                if(gamePannel8.score<120){
                     card.show(controlPannel,"gamePannel8");
                     gamePannel8.getFocus();
                 }
@@ -193,7 +195,8 @@ public class GamePannel extends javax.swing.JPanel {
     }//home
     
     public void scoreUpdate(){
-        totalScore=gamePannel1.bestScore+gamePannel3.bestScore;
+        totalScore=gamePannel1.bestScore+gamePannel2.bestScore+gamePannel3.bestScore+gamePannel4.bestScore
+                +gamePannel5.bestScore+gamePannel6.bestScore+gamePannel7.bestScore+gamePannel8.bestScore;
         scoreLabel.setText("Score : "+String.format("%03d",totalScore));
     }
     
@@ -209,7 +212,7 @@ public class GamePannel extends javax.swing.JPanel {
 
         homeButton = new javax.swing.JButton();
         TaskBarPannel = new javax.swing.JPanel();
-        rollnumLabel = new javax.swing.JLabel();
+        userIdLabel = new javax.swing.JLabel();
         scoreLabel = new javax.swing.JLabel();
         timeLabel = new javax.swing.JLabel();
         controlPannel = new javax.swing.JPanel();
@@ -231,6 +234,9 @@ public class GamePannel extends javax.swing.JPanel {
 
         TaskBarPannel.setBackground(new java.awt.Color(101, 101, 101));
 
+        userIdLabel.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        userIdLabel.setForeground(new java.awt.Color(36, 36, 36));
+
         scoreLabel.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(36, 36, 36));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -248,8 +254,9 @@ public class GamePannel extends javax.swing.JPanel {
         TaskBarPannelLayout.setHorizontalGroup(
             TaskBarPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TaskBarPannelLayout.createSequentialGroup()
-                .addComponent(rollnumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
+                .addGap(20, 20, 20)
+                .addComponent(userIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
                 .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -258,7 +265,7 @@ public class GamePannel extends javax.swing.JPanel {
             TaskBarPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaskBarPannelLayout.createSequentialGroup()
                 .addGroup(TaskBarPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(rollnumLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(userIdLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(timeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -295,8 +302,8 @@ public class GamePannel extends javax.swing.JPanel {
     private javax.swing.JLabel background_Image;
     public javax.swing.JPanel controlPannel;
     private javax.swing.JButton homeButton;
-    private javax.swing.JLabel rollnumLabel;
     private javax.swing.JLabel scoreLabel;
     private javax.swing.JLabel timeLabel;
+    private javax.swing.JLabel userIdLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,7 +24,7 @@ public class GamePannel8 extends javax.swing.JPanel {
     
     int playerX,playerY;
     int box1x,box1y,box2x,box2y,box3x,box3y;
-    int win=0,levelwin,score=0,level,maxlevel=3;
+    int win=0,levelwin,score=0,bestScore=0,level,maxlevel=3;
     
     Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
     Border lightborder = new LineBorder(Color.lightGray, 1);
@@ -71,9 +71,23 @@ public class GamePannel8 extends javax.swing.JPanel {
                    return false;
             }
         levelwin=1;
-        score+=level*10;
+        switch(level){
+            case 1:
+                score=30;
+                break;
+            case 2:
+                score=70;
+                break;
+            case 3:
+                score=120;
+                break;
+        }
         scoreLabel.setText("score : "+score);
-        
+        if(score>bestScore){
+            bestScore=score;
+            gamePannel.scoreUpdate();
+            bestScoreLabel.setText("Best Score : "+String.format("%03d",bestScore));
+        }
         if(levelwin==1){
             if(level<maxlevel){
                 JOptionPane.showMessageDialog(controlPannel,"move to next level","Level Complete",JOptionPane.INFORMATION_MESSAGE);
@@ -85,6 +99,7 @@ public class GamePannel8 extends javax.swing.JPanel {
             else if(level==maxlevel){
                 win=1;
                 JOptionPane.showMessageDialog(controlPannel,"Yippee you won the game","Game Complete",JOptionPane.INFORMATION_MESSAGE);
+                gamePannel.scoreUpdate();
                 initBoard1();
             }   
         }
@@ -387,6 +402,7 @@ public class GamePannel8 extends javax.swing.JPanel {
         newButton = new javax.swing.JButton();
         undoButton = new javax.swing.JButton();
         helpButton = new javax.swing.JButton();
+        bestScoreLabel = new javax.swing.JLabel();
         levelLabel = new javax.swing.JLabel();
         scoreLabel = new javax.swing.JLabel();
         footerLabel = new javax.swing.JLabel();
@@ -442,12 +458,19 @@ public class GamePannel8 extends javax.swing.JPanel {
         add(helpButton);
         helpButton.setBounds(670, 440, 110, 29);
 
+        bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
+        bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
+        bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bestScoreLabel.setText("Best Score : 00");
+        add(bestScoreLabel);
+        bestScoreLabel.setBounds(580, 20, 240, 50);
+
         levelLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         levelLabel.setForeground(new java.awt.Color(252, 236, 236));
         levelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         levelLabel.setText("Level : 0/3");
         add(levelLabel);
-        levelLabel.setBounds(630, 20, 180, 50);
+        levelLabel.setBounds(630, 140, 180, 50);
 
         scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
@@ -501,9 +524,9 @@ public class GamePannel8 extends javax.swing.JPanel {
                                             +"* Yellow boxes are to be placed on target points (Red Dot)\n"
                                             +"* you can undo only the last 3 moves\n"
                                             +"* There are total 3 levels\n"
-                                            +"* First level carries 10 points\n"
-                                            +"* Second level carries 20 points\n"
-                                            +"* Third level carries 30 points\n"
+                                            +"* First level carries 30 points\n"
+                                            +"* Second level carries 40 points\n"
+                                            +"* Third level carries 50 points\n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
         );
@@ -512,6 +535,7 @@ public class GamePannel8 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background_Image;
+    private javax.swing.JLabel bestScoreLabel;
     private javax.swing.JPanel controlPannel;
     private javax.swing.JLabel footerLabel;
     private javax.swing.JLabel heading;

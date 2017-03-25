@@ -21,7 +21,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         
         
         initComponents();
-    //    resetButton.setVisible(false);
+        resetButton.setVisible(false);
     }
     
     public int wincheck(){

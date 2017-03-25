@@ -18,7 +18,7 @@ import javax.swing.border.LineBorder;
 public class GamePannel6 extends javax.swing.JPanel {
 
     rawBox board[][] = new rawBox[31][31];//board for values
-    int win=0,levelwin=0,score=0,totalmoves=0,level,maxlevel=3;
+    int win=0,levelwin=0,score=0,bestScore=0,totalmoves=0,level,maxlevel=3;
     
     Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
     Border lightborder = new LineBorder(Color.lightGray, 1);
@@ -470,6 +470,11 @@ public class GamePannel6 extends javax.swing.JPanel {
    
     public void scoreUpdate(){
         score+=level;
+        if(score>bestScore){
+            bestScore=score;
+            gamePannel.scoreUpdate();
+            bestScoreLabel.setText("Best Score : "+String.format("%03d",bestScore));
+        }
         scoreLabel.setText("Score : "+Integer.toString(score));
     }//updates moves
     
@@ -522,6 +527,7 @@ public class GamePannel6 extends javax.swing.JPanel {
         restartButton = new javax.swing.JButton();
         helpButton = new javax.swing.JButton();
         resumeButton = new javax.swing.JButton();
+        bestScoreLabel = new javax.swing.JLabel();
         levelLabel = new javax.swing.JLabel();
         scoreLabel = new javax.swing.JLabel();
         footerLabel = new javax.swing.JLabel();
@@ -578,19 +584,26 @@ public class GamePannel6 extends javax.swing.JPanel {
         add(resumeButton);
         resumeButton.setBounds(670, 370, 110, 30);
 
+        bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
+        bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
+        bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bestScoreLabel.setText("Best Score : 0");
+        add(bestScoreLabel);
+        bestScoreLabel.setBounds(620, 20, 180, 50);
+
         levelLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         levelLabel.setForeground(new java.awt.Color(252, 236, 236));
         levelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         levelLabel.setText("level : 0/3");
         add(levelLabel);
-        levelLabel.setBounds(620, 10, 180, 50);
+        levelLabel.setBounds(630, 130, 180, 50);
 
         scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("Score : 0");
         add(scoreLabel);
-        scoreLabel.setBounds(630, 170, 180, 50);
+        scoreLabel.setBounds(630, 210, 180, 50);
 
         footerLabel.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         footerLabel.setForeground(new java.awt.Color(255, 244, 244));
@@ -638,6 +651,7 @@ public class GamePannel6 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background_Image;
+    private javax.swing.JLabel bestScoreLabel;
     private javax.swing.JPanel controlPannel;
     private javax.swing.JLabel footerLabel;
     private javax.swing.JLabel heading;

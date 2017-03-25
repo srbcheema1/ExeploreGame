@@ -136,7 +136,8 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        New = new javax.swing.JButton();
+        resetButton = new javax.swing.JButton();
+        helpButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         cellpanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -150,15 +151,25 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
         add(jLabel2);
         jLabel2.setBounds(340, 20, 250, 40);
 
-        New.setForeground(new java.awt.Color(1, 1, 1));
-        New.setText("New");
-        New.addActionListener(new java.awt.event.ActionListener() {
+        resetButton.setForeground(new java.awt.Color(1, 1, 1));
+        resetButton.setText("reset");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewActionPerformed(evt);
+                resetButtonActionPerformed(evt);
             }
         });
-        add(New);
-        New.setBounds(730, 230, 70, 29);
+        add(resetButton);
+        resetButton.setBounds(720, 410, 70, 29);
+
+        helpButton.setForeground(new java.awt.Color(1, 1, 1));
+        helpButton.setText("help");
+        helpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpButtonActionPerformed(evt);
+            }
+        });
+        add(helpButton);
+        helpButton.setBounds(720, 470, 70, 29);
 
         jPanel2.setLayout(null);
 
@@ -191,7 +202,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
         back.setBounds(-460, -100, 1310, 1200);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewActionPerformed
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
 
         for(int i=0;i<8;i++){
             for(int j=0;j<8;j++){
@@ -207,16 +218,26 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
 
             }
         }  // TODO add your handling code here:
-    }//GEN-LAST:event_NewActionPerformed
+    }//GEN-LAST:event_resetButtonActionPerformed
+
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+        JOptionPane.showMessageDialog(null,"* place 8 queens on board\n"
+                                            +"* no queen must be in target position w.r.t other queen\n"
+                                            +"* 30 points will be awarded for finishing the game\n"
+                                            ,"Instructions"
+                                            ,JOptionPane.INFORMATION_MESSAGE                                    
+        );
+    }//GEN-LAST:event_helpButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton New;
     private javax.swing.JLabel back;
     private javax.swing.JPanel cellpanel;
+    private javax.swing.JButton helpButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton resetButton;
     // End of variables declaration//GEN-END:variables
 
 public class queenbutton extends JButton

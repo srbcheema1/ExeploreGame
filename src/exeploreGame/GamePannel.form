@@ -58,8 +58,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="rollnumLabel" min="-2" pref="200" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="userIdLabel" min="-2" pref="229" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="scoreLabel" min="-2" pref="200" max="-2" attributes="0"/>
                   <EmptySpace pref="232" max="32767" attributes="0"/>
                   <Component id="timeLabel" min="-2" pref="100" max="-2" attributes="0"/>
@@ -70,7 +71,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="rollnumLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="userIdLabel" alignment="0" max="32767" attributes="0"/>
                       <Component id="scoreLabel" max="32767" attributes="0"/>
                       <Component id="timeLabel" alignment="1" max="32767" attributes="0"/>
                   </Group>
@@ -80,7 +81,15 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="rollnumLabel">
+        <Component class="javax.swing.JLabel" name="userIdLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="17" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="24" green="24" red="24" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="scoreLabel">
           <Properties>

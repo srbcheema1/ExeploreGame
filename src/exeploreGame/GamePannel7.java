@@ -19,7 +19,7 @@ public class GamePannel7 extends javax.swing.JPanel {
     int ball=0;
     int oldball=0;
     int temp1=0,temp2=0,temp3=0,temp4=0,temp5=0,prevb1i=0,prevb1j=0,prevb2i=0,prevb2j=0,prevb3i=0,prevb3j=0,temp=0,one,two,prevb4i=0,prevb4j=0,prevb5i=0,prevb5j=0;
-    int n=0,leveli,levelj,levelno=1,score;
+    int n=0,leveli,levelj,levelno=1,score=0,bestScore=0;
     KeyAdapter hello=new KeyAdapter(){
             public void keyTyped(KeyEvent e){
                 keyInput(e);
@@ -509,22 +509,33 @@ public class GamePannel7 extends javax.swing.JPanel {
             {    
                 score=20;
                 scoreLabel.setText("score : "+score);
+                if(score>bestScore){
+                    bestScore=score;
+                    gamePannel.scoreUpdate();
+                    bestScoreLabel.setText("Best Score : "+String.format("%02d",bestScore));
+                }
                 levelLabel.setText("level : 2/2");
                 JOptionPane.showMessageDialog(null,"Yeah level 1 cleared, Go to next level");
-                    levelno=2;
-                    controlPannel.removeAll();
-                    controlPannel.repaint();
-                    controlPannel.removeKeyListener(hello);
-                    level2();
-                    createBox();
+                levelno=2;
+                controlPannel.removeAll();
+                controlPannel.repaint();
+                controlPannel.removeKeyListener(hello);
+                level2();
+                createBox();
                 return 1;    
                                     
             }
             if(levelno==2)
             {
-                score=50;
+                score=60;
+                if(score>bestScore){
+                    bestScore=score;
+                    gamePannel.scoreUpdate();
+                    bestScoreLabel.setText("Best Score : "+String.format("%02d",bestScore));
+                }
                 scoreLabel.setText("score : "+score);
                 JOptionPane.showMessageDialog(null,"Yeah you win this game go and play other games");
+                gamePannel.home();
             }
         }
      return 0;
@@ -574,7 +585,7 @@ public class GamePannel7 extends javax.swing.JPanel {
                 + "8) Current ball shows the current ball in movement\n"
                 + "9) RESET button to reset the game\n"
                 + "10) first level carry 20 points\n"
-                + "11) second level carry 30 points\n"
+                + "11) second level carry 40 points\n"
                 + "12) If keys not working Or you loose your focus from\n"
                 + "    main game use FOCUS button given in bottom-right";
         JOptionPane.showMessageDialog(null, str, "INSTRUCTIONS", HEIGHT);
@@ -591,6 +602,7 @@ public class GamePannel7 extends javax.swing.JPanel {
 
         controlPannel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        bestScoreLabel = new javax.swing.JLabel();
         levelLabel = new javax.swing.JLabel();
         scoreLabel = new javax.swing.JLabel();
         BallLabel = new javax.swing.JLabel();
@@ -634,19 +646,26 @@ public class GamePannel7 extends javax.swing.JPanel {
         add(jButton1);
         jButton1.setBounds(720, 320, 90, 29);
 
+        bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 0, 20)); // NOI18N
+        bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
+        bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bestScoreLabel.setText("Best Score : 00");
+        add(bestScoreLabel);
+        bestScoreLabel.setBounds(610, 20, 240, 30);
+
         levelLabel.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         levelLabel.setForeground(new java.awt.Color(222, 222, 222));
         levelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         levelLabel.setText("level : 1/2");
         add(levelLabel);
-        levelLabel.setBounds(700, 20, 90, 30);
+        levelLabel.setBounds(720, 150, 90, 30);
 
         scoreLabel.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(222, 222, 222));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("score : 0");
         add(scoreLabel);
-        scoreLabel.setBounds(710, 130, 100, 30);
+        scoreLabel.setBounds(710, 210, 100, 30);
 
         BallLabel.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         BallLabel.setForeground(java.awt.Color.white);
@@ -732,6 +751,7 @@ public class GamePannel7 extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BallLabel;
     private javax.swing.JLabel background_Image;
+    private javax.swing.JLabel bestScoreLabel;
     private javax.swing.JPanel controlPannel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

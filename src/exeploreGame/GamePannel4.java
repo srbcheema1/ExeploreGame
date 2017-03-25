@@ -27,7 +27,7 @@ public class GamePannel4 extends javax.swing.JPanel {
     int turn;//-1 for bot 1 for player
     int diff=1000,depth;//difficulty
     int box1x,box1y,box2x,box2y;
-    int win=0,levelwin,moves=0,totalmoves=0,memoryMoves,level,maxlevel=3;
+    int win=0,levelwin,moves=0,totalmoves=0,memoryMoves,level,maxlevel=3,bestScore=0;
     
     //virtaul
     int vplayerX,vplayerY;
@@ -163,10 +163,10 @@ public class GamePannel4 extends javax.swing.JPanel {
                         a=1;
         if(a==1&&turn==1){
             levelwin=1;
-            JOptionPane.showMessageDialog(controlPannel,"Hurrey you won"+"your score : "+moves+" ","Level Complete",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(controlPannel,"Hurrey you won"+"your score : "+moves+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
         }  
         if(a==1&&turn==-1){
-            JOptionPane.showMessageDialog(controlPannel,"your score : "+moves+" ","Level Complete",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(controlPannel,"your score : "+moves+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
         }
     }//checks if player or bot wins or not
     
@@ -434,6 +434,11 @@ public class GamePannel4 extends javax.swing.JPanel {
     public void moveUpdate(){
         totalmoves++;
         moves++;
+        if(moves>bestScore){
+            bestScore=moves;
+            gamePannel.scoreUpdate();
+        }
+        bestScoreLabel.setText("Best Score : "+Integer.toString(bestScore));
         scoreLabel.setText("Score : "+Integer.toString(moves));
     }//updates moves
     
@@ -484,6 +489,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         heading2 = new javax.swing.JLabel();
         heading3 = new javax.swing.JLabel();
         moveTeller = new javax.swing.JLabel();
+        bestScoreLabel = new javax.swing.JLabel();
         scoreLabel = new javax.swing.JLabel();
         helpButton = new javax.swing.JButton();
         undoButton = new javax.swing.JButton();
@@ -531,12 +537,19 @@ public class GamePannel4 extends javax.swing.JPanel {
         add(moveTeller);
         moveTeller.setBounds(160, 110, 130, 30);
 
+        bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
+        bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
+        bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bestScoreLabel.setText("Best Score : 0");
+        add(bestScoreLabel);
+        bestScoreLabel.setBounds(570, 30, 230, 50);
+
         scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("Score : 0");
         add(scoreLabel);
-        scoreLabel.setBounds(630, 120, 180, 50);
+        scoreLabel.setBounds(620, 140, 180, 50);
 
         helpButton.setText("help");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
@@ -609,6 +622,7 @@ public class GamePannel4 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background_image;
+    private javax.swing.JLabel bestScoreLabel;
     private javax.swing.JPanel controlPannel;
     private javax.swing.JLabel footerLabel;
     private javax.swing.JLabel heading1;

@@ -15,7 +15,7 @@ import javax.swing.border.LineBorder;
  */
 public class GamePannel2 extends javax.swing.JPanel {
 
-    int win=0,levelwin=0,level=1,maxlevel=3,score=0;
+    int win=0,levelwin=0,level=1,maxlevel=3,bestScore=0;
     
     Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
     Border lightborder = new LineBorder(Color.lightGray, 1);
@@ -58,20 +58,31 @@ public class GamePannel2 extends javax.swing.JPanel {
     
     public void gameFinish(){
         levelwin=1;
+        switch(level){
+            case 1:
+                bestScore=10;
+                break;
+            case 2:
+                bestScore=25;
+                break;
+            case 3:
+                bestScore=45;
+                break;
+        }
         if(levelwin==1){
             if(level<maxlevel){
-                JOptionPane.showMessageDialog(controlPannel,"Move to next level","Level Complete",JOptionPane.INFORMATION_MESSAGE);
-                    score+=10;
-                    scoreLabel.setText("score : "+score);
-                    level++;
-                    maxpics+=2;
-                    pictime-=100;
-                    initBoard();
+                scoreLabel.setText("score : "+bestScore);
+                gamePannel.scoreUpdate();
+                level++;
+                maxpics+=2;
+                pictime-=100;
+                initBoard();
+                JOptionPane.showMessageDialog(controlPannel,"Move to next level","Level Complete",JOptionPane.INFORMATION_MESSAGE);                
             }
             else if(level==maxlevel){
                 win=1;
-                score+=10;
-                scoreLabel.setText("score : "+score);
+                scoreLabel.setText("score : "+bestScore);
+                gamePannel.scoreUpdate();
                 JOptionPane.showMessageDialog(controlPannel,"Yippee you won the game","Game Complete",JOptionPane.INFORMATION_MESSAGE);
             }   
         }
@@ -180,6 +191,13 @@ public class GamePannel2 extends javax.swing.JPanel {
     }
     
     public void getFocus(){
+        controlPannel.grabFocus();//get focus back to control pannel
+    }
+    
+    public void resetLevel(){
+        picTimer.stop();
+        imageLabel.setIcon(null);
+        initBoard();
         controlPannel.grabFocus();//get focus back to control pannel
     }
 
@@ -291,9 +309,7 @@ public class GamePannel2 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
-        picTimer.stop();
-        initBoard();
-        controlPannel.grabFocus();//get focus back to control pannel
+        resetLevel();
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
@@ -302,7 +318,9 @@ public class GamePannel2 extends javax.swing.JPanel {
                                             +"* enter number of times it was displayed\n"
                                             +"* you can press enter or click submit button to submit ans\n"
                                             +"* you can submit ans only once if wrong then reset level\n"
-                                            +"* each level carries 10 points\n"
+                                            +"* first level carries 10 points\n"
+                                            +"* second level carries 15 points\n"
+                                            +"* third level carries 20 points\n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
         );
@@ -312,7 +330,6 @@ public class GamePannel2 extends javax.swing.JPanel {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         if(lock==0){
             lock=1;
-            System.out.println("listner called");  
             boolean validans=false;
             String digit=(ansTextField.getText());
             if(digit.compareTo("")==0) digit=" "; //to make string length at least one

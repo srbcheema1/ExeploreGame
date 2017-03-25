@@ -17,7 +17,7 @@ import javax.swing.border.LineBorder;
 public class GamePannel5 extends javax.swing.JPanel {
 
     rawBox board[][] = new rawBox[31][31];//board for values
-    int win=0,levelwin=0,movesLeft=200,totalmoves=0,level,maxlevel=1,score=0;
+    int win=0,levelwin=0,movesLeft=300,totalmoves=0,level,maxlevel=1,bestScore=0;
     
     Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
     Border lightborder = new LineBorder(Color.lightGray, 1);
@@ -78,7 +78,11 @@ public class GamePannel5 extends javax.swing.JPanel {
             else if(level==maxlevel){
                 win=1;
                 JOptionPane.showMessageDialog(controlPannel,"Your Score : "+movesLeft+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
-                score=movesLeft;
+                if(movesLeft>bestScore){
+                    bestScore=movesLeft;
+                    bestScoreLabel.setText("Best Score : "+String.format("%03d",bestScore));
+                    gamePannel.scoreUpdate();
+                }
             }   
         }
         return true;
@@ -140,7 +144,7 @@ public class GamePannel5 extends javax.swing.JPanel {
     public void initBoard(){
         levelwin=0;
         level = 1;
-        movesLeft=200;
+        movesLeft=300;
         movesLabel.setText("Moves Left : "+Integer.toString(movesLeft));
         
         for(int i=0;i<6;i++)//initilize all 0
@@ -334,6 +338,7 @@ public class GamePannel5 extends javax.swing.JPanel {
         newButton = new javax.swing.JButton();
         helpButton = new javax.swing.JButton();
         newPicButton = new javax.swing.JButton();
+        bestScoreLabel = new javax.swing.JLabel();
         movesLabel = new javax.swing.JLabel();
         footerLabel = new javax.swing.JLabel();
         background_Image = new javax.swing.JLabel();
@@ -363,7 +368,7 @@ public class GamePannel5 extends javax.swing.JPanel {
 
         hintLabel.setText("jLabel1");
         add(hintLabel);
-        hintLabel.setBounds(590, 100, 200, 200);
+        hintLabel.setBounds(600, 160, 200, 200);
 
         newButton.setText("reset");
         newButton.addActionListener(new java.awt.event.ActionListener() {
@@ -372,7 +377,7 @@ public class GamePannel5 extends javax.swing.JPanel {
             }
         });
         add(newButton);
-        newButton.setBounds(650, 330, 110, 29);
+        newButton.setBounds(650, 430, 110, 29);
 
         helpButton.setText("help");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
@@ -381,7 +386,7 @@ public class GamePannel5 extends javax.swing.JPanel {
             }
         });
         add(helpButton);
-        helpButton.setBounds(650, 410, 110, 29);
+        helpButton.setBounds(650, 550, 110, 29);
 
         newPicButton.setText("new pic");
         newPicButton.addActionListener(new java.awt.event.ActionListener() {
@@ -392,12 +397,19 @@ public class GamePannel5 extends javax.swing.JPanel {
         add(newPicButton);
         newPicButton.setBounds(650, 490, 110, 29);
 
+        bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
+        bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
+        bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bestScoreLabel.setText("Best Score : 000");
+        add(bestScoreLabel);
+        bestScoreLabel.setBounds(580, 30, 240, 50);
+
         movesLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         movesLabel.setForeground(new java.awt.Color(252, 236, 236));
         movesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        movesLabel.setText("Moves Left : 200");
+        movesLabel.setText("Moves Left : 300");
         add(movesLabel);
-        movesLabel.setBounds(570, 20, 240, 50);
+        movesLabel.setBounds(580, 90, 240, 50);
 
         footerLabel.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         footerLabel.setForeground(new java.awt.Color(255, 244, 244));
@@ -420,7 +432,7 @@ public class GamePannel5 extends javax.swing.JPanel {
 
         JOptionPane.showMessageDialog(controlPannel,"* click on the pic adjacent to blank pic to exchange its position\n"
                                             +"* you can also use W A S D keys to move blank pic in respective direction\n"
-                                            +"* game must be finished within 200 moves\n"
+                                            +"* game must be finished within 300 moves\n"
                                             +"* score(equal to moves left) will only be awarded when whole pic is solved\n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
@@ -443,6 +455,7 @@ public class GamePannel5 extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background_Image;
+    private javax.swing.JLabel bestScoreLabel;
     private javax.swing.JPanel controlPannel;
     private javax.swing.JLabel footerLabel;
     private javax.swing.JLabel heading;
