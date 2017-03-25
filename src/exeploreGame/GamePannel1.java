@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 public class GamePannel1 extends javax.swing.JPanel {
     
     public int comp_wins,bot,me,you_win,turn,filler;
-    int score=0;
+    int bestScore=0;
     public int board[][];
     GamePannel gamePannel ;
     
@@ -19,7 +19,9 @@ public class GamePannel1 extends javax.swing.JPanel {
         this.me=1;
         this.you_win=0;
         
+        
         initComponents();
+    //    resetButton.setVisible(false);
     }
     
     public int wincheck(){
@@ -286,29 +288,30 @@ public class GamePannel1 extends javax.swing.JPanel {
     
             if(result==me){
                 you_win++;
-                JOptionPane.showMessageDialog(null, "you win");
-                if(you_win-comp_wins==1)score=10;
-                if(you_win-comp_wins==2)score=20;
-                if(you_win-comp_wins>=3){
-                    score=30;
+                if(you_win-comp_wins==1&&bestScore==0)bestScore=10;
+                if(you_win-comp_wins==2&&bestScore==10)bestScore=20;
+                if(you_win-comp_wins>=3&&bestScore==20){
+                    bestScore=30;
                     you_win=0;
                     comp_wins=0;
                     gamePannel.home();
                 //    setVisible(false); //you can't see me!
                 //    dispose(); //Destroy the JFrame object
                 }
+                gamePannel.scoreUpdate();
+                JOptionPane.showMessageDialog(null, "you win");
             }
             else{               
                 JOptionPane.showMessageDialog(null, "BOT wins");
                 comp_wins++;
-                if(you_win-comp_wins==1)score=10;
+            /*    if(you_win-comp_wins==1)score=10;
                 if(you_win-comp_wins==2)score=20;
                 if(you_win-comp_wins<=0)score=0;
-                if(you_win-comp_wins==3)score=30;
+                if(you_win-comp_wins==3)score=30;   */
             }
             jLabel4.setText("YOU : "+you_win+"");
             jLabel2.setText("COMP : "+comp_wins+"");
-            scoreLabel.setText("score : "+score);
+            scoreLabel.setText("score : "+bestScore);
             resete();
         }
         if(fill==9){
@@ -647,7 +650,7 @@ public class GamePannel1 extends javax.swing.JPanel {
     }//GEN-LAST:event_box7ActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(jPanel2,"* you will have to make lead of 3 wins to bot to win\n"
+        JOptionPane.showMessageDialog(jPanel2,"* you will have to make lead of complete the game\n"
             +"* every lead of one win will give you 10 points\n"
             ,"Instructions"
             ,JOptionPane.INFORMATION_MESSAGE

@@ -19,7 +19,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
     Border buttonborder=new LineBorder(Color.black,1);
     queenbutton checker[][]=new queenbutton[8][8];
     GamePannel gamePannel ;
-    int score =0;
+    int bestScore =0;
 
     public GamePannel3(GamePannel gamePannel) {
         this.setSize(820,620);
@@ -57,9 +57,10 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
             }
        }
        if(queencount==8){
-           score=30;
-           gamePannel.home();
+           bestScore=30;
+           gamePannel.scoreUpdate();
            JOptionPane.showMessageDialog(null,"You won");
+           gamePannel.home();
        }
        
        }

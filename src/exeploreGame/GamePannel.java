@@ -18,7 +18,9 @@ public class GamePannel extends javax.swing.JPanel {
     Border nullborder = new LineBorder(Color.darkGray, 0);
     
     //gamepanels
+    public WelcomePannel welcomePannel;
     public HomePannel homePannel;
+    public InstructionPannel instructionPannel;
     public GamePannel1 gamePannel1;
     public GamePannel2 gamePannel2;
     public GamePannel3 gamePannel3;
@@ -27,13 +29,16 @@ public class GamePannel extends javax.swing.JPanel {
     public GamePannel6 gamePannel6;
     public GamePannel7 gamePannel7;
     public GamePannel8 gamePannel8;
+    public FinalPannel finalPannel;
     
     
     CardLayout card=new CardLayout();//layout for controlPannel
     
     //game variables
     int hours=2,minutes=0,seconds=0;
+    int timerlock=0; 
     Timer clockTimer;
+    int totalScore;
     
     public GamePannel() {
         initComponents();
@@ -43,11 +48,9 @@ public class GamePannel extends javax.swing.JPanel {
     public final void myinit(){
         setSize(970, 690);//our standard game pannel size
         setOpaque(false);//to make buttons transparent
-        
+        TaskBarPannel.setBackground(new Color(34,34,34));
         controlPannel.setLayout(card);
-        
         clockTimer = new Timer(1000,new ClockUpdater());
-        clockTimer.start();
         
         createGames();//creates games
         
@@ -56,8 +59,13 @@ public class GamePannel extends javax.swing.JPanel {
     }//my init
     
     public void createGames(){
+        welcomePannel=new WelcomePannel(this);
+        controlPannel.add(welcomePannel,"welcomePannel");
         homePannel=new HomePannel(this);
         controlPannel.add(homePannel,"homePannel");
+        instructionPannel=new InstructionPannel(this);
+        controlPannel.add(instructionPannel,"instructionPannel");
+        
         gamePannel1=new GamePannel1(this);
         controlPannel.add(gamePannel1,"gamePannel1");
         gamePannel2=new GamePannel2(this);
@@ -74,6 +82,9 @@ public class GamePannel extends javax.swing.JPanel {
         controlPannel.add(gamePannel7,"gamePannel7");
         gamePannel8=new GamePannel8(this);
         controlPannel.add(gamePannel8,"gamePannel8");
+        
+        finalPannel=new FinalPannel(this);
+        controlPannel.add(finalPannel,"finalPannel");
     } //creates Games
     
     public void updateGui(){
@@ -84,7 +95,7 @@ public class GamePannel extends javax.swing.JPanel {
         switch(index){
             case 1:
                 cardPannel=1;
-                if(gamePannel1.score<30){
+                if(gamePannel1.bestScore<30){
                     card.show(controlPannel,"gamePannel1");
                 }    
                 else{
@@ -103,7 +114,7 @@ public class GamePannel extends javax.swing.JPanel {
                 break;
             case 3:
                 cardPannel=3;
-                if(gamePannel3.score<30){
+                if(gamePannel3.bestScore<30){
                     card.show(controlPannel,"gamePannel3");
                 }
                 else{
@@ -157,7 +168,10 @@ public class GamePannel extends javax.swing.JPanel {
                 if(minutes==0) {
                     if(hours==0&&minutes==0&&seconds==0) {
                         clockTimer.stop();
-                    }
+                        timerlock=2;
+                        JOptionPane.showMessageDialog(null,"TimeUp");
+                        card.show(controlPannel,"finalPannel");
+                        finalPannel.shader.start();                    }
                     minutes=60;
                     hours--;
                 }
@@ -169,11 +183,22 @@ public class GamePannel extends javax.swing.JPanel {
     }
     
     public void home(){
-        card.show(controlPannel,"homePannel");
+        if(timerlock==0){
+            clockTimer.start();
+            TaskBarPannel.setBackground(new Color(99,99,99));
+            timerlock=1;
+        }
+        if(timerlock==1)
+            card.show(controlPannel,"homePannel");
     }//home
     
+    public void scoreUpdate(){
+        totalScore=gamePannel1.bestScore+gamePannel3.bestScore;
+        scoreLabel.setText("Score : "+String.format("%03d",totalScore));
+    }
+    
     public void initBoard(){
-        card.show(controlPannel,"homePannel");
+        card.show(controlPannel,"welcomePannel");
         
         updateGui();//calls update box
     } //initializes board1
@@ -207,12 +232,14 @@ public class GamePannel extends javax.swing.JPanel {
         TaskBarPannel.setBackground(new java.awt.Color(101, 101, 101));
 
         scoreLabel.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        scoreLabel.setForeground(new java.awt.Color(36, 36, 36));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        scoreLabel.setText("score : 00");
+        scoreLabel.setText("Score : 000");
 
         timeLabel.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
+        timeLabel.setForeground(new java.awt.Color(36, 36, 36));
         timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        timeLabel.setText("0:00:00");
+        timeLabel.setText("2:00:00");
         timeLabel.setToolTipText("");
         timeLabel.setAlignmentY(1.0F);
 
