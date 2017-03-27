@@ -94,7 +94,7 @@ public class GamePannel extends javax.swing.JPanel {
     
     public void openGame(int index){
         switch(index){
-            case 1:
+            case 1://tic tac toe
                 cardPannel=1;
                 if(gamePannel1.bestScore<30){
                     card.show(controlPannel,"gamePannel1");
@@ -103,7 +103,7 @@ public class GamePannel extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(controlPannel, "Game is completed");
                 }
                 break;
-            case 2:
+            case 2://memory
                 cardPannel=2;
                 if(gamePannel2.bestScore<45){
                     card.show(controlPannel,"gamePannel2");
@@ -114,7 +114,7 @@ public class GamePannel extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(controlPannel, "Game is completed");
                 } 
                 break;
-            case 3:
+            case 3://queen8
                 cardPannel=3;
                 if(gamePannel3.bestScore<40){
                     card.show(controlPannel,"gamePannel3");
@@ -123,24 +123,37 @@ public class GamePannel extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(controlPannel, "Game is completed");
                 } 
                 break;
-            case 4:
+            case 4://black vs white
                 cardPannel=4;
-                card.show(controlPannel,"gamePannel4");
-                gamePannel4.getFocus();
+                if(gamePannel4.bestScore<48){
+                    card.show(controlPannel,"gamePannel4");
+                    gamePannel4.getFocus();
+                }
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                }
                 break;
-            case 5:
+            case 5://pic 4x4
                 cardPannel=5;
-                card.show(controlPannel,"gamePannel5");
-                gamePannel5.getFocus();
+                if(gamePannel5.bestScore<150){
+                    card.show(controlPannel,"gamePannel5");
+                    gamePannel5.getFocus();
+                }
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                }
                 break;
-            case 6:
+            case 6://snake
                 cardPannel=6;
-                if(gamePannel6.score<150){
+                if(gamePannel6.score<5000){
                     card.show(controlPannel,"gamePannel6");
                     gamePannel6.getFocus();
                 }
+                else{
+                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                }
                 break;
-            case 7:
+            case 7://
                 cardPannel=7;
                 if(gamePannel7.score<60){
                     card.show(controlPannel,"gamePannel7");

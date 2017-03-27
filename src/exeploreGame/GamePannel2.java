@@ -71,16 +71,18 @@ public class GamePannel2 extends javax.swing.JPanel {
         }
         if(levelwin==1){
             if(level<maxlevel){
-                scoreLabel.setText("score : "+bestScore);
-                gamePannel.scoreUpdate();
                 level++;
                 maxpics+=2;
                 pictime-=100;
-                initBoard();
+                
+                scoreLabel.setText("score : "+bestScore);
+                gamePannel.scoreUpdate();
                 JOptionPane.showMessageDialog(controlPannel,"Move to next level","Level Complete",JOptionPane.INFORMATION_MESSAGE);                
+                initBoard();
             }
             else if(level==maxlevel){
                 win=1;
+                
                 scoreLabel.setText("score : "+bestScore);
                 gamePannel.scoreUpdate();
                 JOptionPane.showMessageDialog(controlPannel,"Yippee you won the game","Game Complete",JOptionPane.INFORMATION_MESSAGE);

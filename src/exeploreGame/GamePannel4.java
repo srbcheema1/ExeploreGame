@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingWorker;
 import javax.swing.Timer;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -166,7 +165,7 @@ public class GamePannel4 extends javax.swing.JPanel {
             levelwin=1;
             JOptionPane.showMessageDialog(controlPannel,"Hurrey you won"+"your score : "+moves+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
         }  
-        if(a==1&&turn==-1){
+        if(a==1&&turn==-1){//mostly this will work
             JOptionPane.showMessageDialog(controlPannel,"your score : "+moves+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
         }
     }//checks if player or bot wins or not

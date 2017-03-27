@@ -304,8 +304,6 @@ public class GamePannel1 extends javax.swing.JPanel {
                     gamePannel.scoreUpdate();
                     JOptionPane.showMessageDialog(dialog, "you win");
                     gamePannel.home();
-                //    setVisible(false); //you can't see me!
-                //    dispose(); //Destroy the JFrame object
                 }
                 else{
                     JOptionPane.showMessageDialog(dialog, "you win");
@@ -315,10 +313,6 @@ public class GamePannel1 extends javax.swing.JPanel {
             else{               
                 JOptionPane.showMessageDialog(dialog, "BOT wins");
                 comp_wins++;
-            /*    if(you_win-comp_wins==1)score=10;
-                if(you_win-comp_wins==2)score=20;
-                if(you_win-comp_wins<=0)score=0;
-                if(you_win-comp_wins==3)score=30;   */
             }
             jLabel4.setText("YOU : "+you_win+"");
             jLabel2.setText("COMP : "+comp_wins+"");

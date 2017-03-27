@@ -87,7 +87,7 @@ public class GamePannel5 extends javax.swing.JPanel {
                     bestScoreLabel.setText("Best Score : "+String.format("%03d",bestScore));
                     gamePannel.scoreUpdate();
                 }
-                JOptionPane.showMessageDialog(controlPannel,"Your Score : "+movesLeft+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(controlPannel,"Your Score : "+bestScore+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
             }   
         }
         return true;
