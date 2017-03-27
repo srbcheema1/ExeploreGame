@@ -76,9 +76,8 @@ public class GamePannel5 extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(controlPannel,"move to next level","Level Complete",JOptionPane.INFORMATION_MESSAGE);
             }
             else if(level==maxlevel){
-                win=1;
-                JOptionPane.showMessageDialog(controlPannel,"Your Score : "+movesLeft+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
-                    if(movesLeft>bestScore){
+                win=1;                
+                if(movesLeft>bestScore){
                     if(movesLeft<150){
                         bestScore=movesLeft;
                     }
@@ -88,6 +87,7 @@ public class GamePannel5 extends javax.swing.JPanel {
                     bestScoreLabel.setText("Best Score : "+String.format("%03d",bestScore));
                     gamePannel.scoreUpdate();
                 }
+                JOptionPane.showMessageDialog(controlPannel,"Your Score : "+movesLeft+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
             }   
         }
         return true;

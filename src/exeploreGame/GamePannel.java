@@ -135,8 +135,10 @@ public class GamePannel extends javax.swing.JPanel {
                 break;
             case 6:
                 cardPannel=6;
-                card.show(controlPannel,"gamePannel6");
-                gamePannel6.getFocus();
+                if(gamePannel6.score<150){
+                    card.show(controlPannel,"gamePannel6");
+                    gamePannel6.getFocus();
+                }
                 break;
             case 7:
                 cardPannel=7;

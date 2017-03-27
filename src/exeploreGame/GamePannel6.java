@@ -101,6 +101,8 @@ public class GamePannel6 extends javax.swing.JPanel {
             else if(level==maxlevel){
                 win=1;
                 JOptionPane.showMessageDialog(controlPannel,"Your Score : "+score+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
+                initBoard1();
+                gamePannel.home();
             }   
         }
         return true;
