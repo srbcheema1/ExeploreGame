@@ -59,7 +59,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
        if(queencount==8){
            bestScore=40;
            gamePannel.scoreUpdate();
-           JOptionPane.showMessageDialog(null,"You won");
+           JOptionPane.showMessageDialog(jPanel2,"You won");
            gamePannel.home();
        }
        

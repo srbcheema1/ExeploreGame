@@ -98,9 +98,10 @@ public class GamePannel8 extends javax.swing.JPanel {
             }
             else if(level==maxlevel){
                 win=1;
-                JOptionPane.showMessageDialog(controlPannel,"Yippee you won the game","Game Complete",JOptionPane.INFORMATION_MESSAGE);
                 gamePannel.scoreUpdate();
+                JOptionPane.showMessageDialog(controlPannel,"Yippee you won the game","Game Complete",JOptionPane.INFORMATION_MESSAGE);
                 initBoard1();
+                gamePannel.home();
             }   
         }
         return true;

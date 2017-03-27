@@ -84,6 +84,7 @@ public class GamePannel2 extends javax.swing.JPanel {
                 scoreLabel.setText("score : "+bestScore);
                 gamePannel.scoreUpdate();
                 JOptionPane.showMessageDialog(controlPannel,"Yippee you won the game","Game Complete",JOptionPane.INFORMATION_MESSAGE);
+                gamePannel.home();
             }   
         }
     }//called on finish of a level

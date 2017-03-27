@@ -287,18 +287,30 @@ public class GamePannel1 extends javax.swing.JPanel {
     
             if(result==me){
                 you_win++;
-                if(you_win-comp_wins==1&&bestScore==0)bestScore=10;
-                if(you_win-comp_wins==2&&bestScore==10)bestScore=20;
-                if(you_win-comp_wins>=3&&bestScore==20){
+                if(you_win-comp_wins==1&&bestScore==0){
+                    bestScore=10;
+                    gamePannel.scoreUpdate();
+                    JOptionPane.showMessageDialog(dialog, "you win");
+                }
+                else if(you_win-comp_wins==2&&bestScore==10){
+                    bestScore=20;
+                    gamePannel.scoreUpdate();
+                    JOptionPane.showMessageDialog(dialog, "you win");
+                }
+                else if(you_win-comp_wins>=3&&bestScore==20){
                     bestScore=30;
                     you_win=0;
                     comp_wins=0;
+                    gamePannel.scoreUpdate();
+                    JOptionPane.showMessageDialog(dialog, "you win");
                     gamePannel.home();
                 //    setVisible(false); //you can't see me!
                 //    dispose(); //Destroy the JFrame object
                 }
-                gamePannel.scoreUpdate();
-                JOptionPane.showMessageDialog(dialog, "you win");
+                else{
+                    JOptionPane.showMessageDialog(dialog, "you win");
+                }
+                
             }
             else{               
                 JOptionPane.showMessageDialog(dialog, "BOT wins");
