@@ -78,8 +78,13 @@ public class GamePannel5 extends javax.swing.JPanel {
             else if(level==maxlevel){
                 win=1;
                 JOptionPane.showMessageDialog(controlPannel,"Your Score : "+movesLeft+" ","Game Complete",JOptionPane.INFORMATION_MESSAGE);
-                if(movesLeft>bestScore){
-                    bestScore=movesLeft;
+                    if(movesLeft>bestScore){
+                    if(movesLeft<150){
+                        bestScore=movesLeft;
+                    }
+                    else{
+                       bestScore=150; 
+                    }
                     bestScoreLabel.setText("Best Score : "+String.format("%03d",bestScore));
                     gamePannel.scoreUpdate();
                 }
@@ -434,6 +439,7 @@ public class GamePannel5 extends javax.swing.JPanel {
                                             +"* you can also use W A S D keys to move blank pic in respective direction\n"
                                             +"* game must be finished within 300 moves\n"
                                             +"* score(equal to moves left) will only be awarded when whole pic is solved\n"
+                                            +"* max 150 score will be given \n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
         );

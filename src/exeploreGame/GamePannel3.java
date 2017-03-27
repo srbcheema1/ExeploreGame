@@ -57,7 +57,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
             }
        }
        if(queencount==8){
-           bestScore=30;
+           bestScore=40;
            gamePannel.scoreUpdate();
            JOptionPane.showMessageDialog(null,"You won");
            gamePannel.home();
@@ -221,7 +221,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
         JOptionPane.showMessageDialog(jPanel2,"* place 8 queens on board\n"
                                             +"* no queen must be in target position w.r.t other queen\n"
-                                            +"* 30 points will be awarded for finishing the game\n"
+                                            +"* 40 points will be awarded for finishing the game\n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
         );

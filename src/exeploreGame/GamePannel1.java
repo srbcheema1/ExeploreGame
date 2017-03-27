@@ -298,10 +298,10 @@ public class GamePannel1 extends javax.swing.JPanel {
                 //    dispose(); //Destroy the JFrame object
                 }
                 gamePannel.scoreUpdate();
-                JOptionPane.showMessageDialog(null, "you win");
+                JOptionPane.showMessageDialog(dialog, "you win");
             }
             else{               
-                JOptionPane.showMessageDialog(null, "BOT wins");
+                JOptionPane.showMessageDialog(dialog, "BOT wins");
                 comp_wins++;
             /*    if(you_win-comp_wins==1)score=10;
                 if(you_win-comp_wins==2)score=20;
@@ -314,7 +314,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             resete();
         }
         if(fill==9){
-            JOptionPane.showMessageDialog(null, "Draw!");
+            JOptionPane.showMessageDialog(dialog, "Draw!");
             resete();
         }
     }
@@ -327,6 +327,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         scoreLabel = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        dialog = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         helpButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -373,6 +374,8 @@ public class GamePannel1 extends javax.swing.JPanel {
         jLabel2.setText("COMP : 0");
         add(jLabel2);
         jLabel2.setBounds(100, 510, 100, 40);
+        add(dialog);
+        dialog.setBounds(550, 260, 0, 0);
 
         jLabel4.setFont(new java.awt.Font("UnGungseo", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(211, 211, 211));
@@ -653,6 +656,7 @@ public class GamePannel1 extends javax.swing.JPanel {
     private javax.swing.JButton box7;
     private javax.swing.JButton box8;
     private javax.swing.JButton box9;
+    private javax.swing.JLabel dialog;
     private javax.swing.JButton helpButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

@@ -70,6 +70,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         controlPannel.addKeyListener(keyInputAdapter);
         
         createBox();//creates boxes
+        undoButton.setVisible(false);
         
         initBoard1();//level one start
     }
@@ -199,7 +200,7 @@ public class GamePannel4 extends javax.swing.JPanel {
                 public void run() {
                    moveTeller.setText("bot thinking .");
                 }
-            });
+        });
         vplayerX=playerX;
         vplayerY=playerY;
         for(int i=0;i<10;i++)//copied into itself
@@ -301,10 +302,11 @@ public class GamePannel4 extends javax.swing.JPanel {
             board[playerY][playerX]=1;    
         }//end else
         
-        moveUpdate(); 
+         
         
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
+                   moveUpdate();
                    moveTeller.setText("bot thinking . .");
                 }
             });

@@ -116,7 +116,7 @@ public class GamePannel extends javax.swing.JPanel {
                 break;
             case 3:
                 cardPannel=3;
-                if(gamePannel3.bestScore<30){
+                if(gamePannel3.bestScore<40){
                     card.show(controlPannel,"gamePannel3");
                 }
                 else{

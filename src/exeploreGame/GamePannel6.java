@@ -587,9 +587,9 @@ public class GamePannel6 extends javax.swing.JPanel {
         bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bestScoreLabel.setText("Best Score : 0");
+        bestScoreLabel.setText("Best Score : 000");
         add(bestScoreLabel);
-        bestScoreLabel.setBounds(620, 20, 180, 50);
+        bestScoreLabel.setBounds(550, 20, 250, 50);
 
         levelLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         levelLabel.setForeground(new java.awt.Color(252, 236, 236));
