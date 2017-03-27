@@ -515,7 +515,7 @@ public class GamePannel7 extends javax.swing.JPanel {
                     bestScoreLabel.setText("Best Score : "+String.format("%02d",bestScore));
                 }
                 levelLabel.setText("level : 2/2");
-                JOptionPane.showMessageDialog(null,"Yeah level 1 cleared, Go to next level");
+                JOptionPane.showMessageDialog(controlPannel,"Yeah level 1 cleared, Go to next level");
                 levelno=2;
                 controlPannel.removeAll();
                 controlPannel.repaint();
@@ -534,7 +534,7 @@ public class GamePannel7 extends javax.swing.JPanel {
                     bestScoreLabel.setText("Best Score : "+String.format("%02d",bestScore));
                 }
                 scoreLabel.setText("score : "+score);
-                JOptionPane.showMessageDialog(null,"Yeah you win this game go and play other games");
+                JOptionPane.showMessageDialog(controlPannel,"Yeah you win this game go and play other games");
                 gamePannel.home();
             }
         }
