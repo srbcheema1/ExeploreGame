@@ -315,14 +315,14 @@ public class GamePannel2 extends javax.swing.JPanel {
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(controlPannel,"* count number of times every pic is shown\n"
-                                            +"* at end a picture wil be displayed\n"
-                                            +"* enter number of times it was displayed\n"
-                                            +"* you can press enter or click submit button to submit ans\n"
-                                            +"* you can submit ans only once if wrong then reset level\n"
-                                            +"* first level carries 10 points\n"
-                                            +"* second level carries 15 points\n"
-                                            +"* third level carries 20 points\n"
+        JOptionPane.showMessageDialog(controlPannel,"* Count number of times every pic is shown\n"
+                                            +"* At end a picture will be displayed\n"
+                                            +"* Enter number of times it was displayed\n"
+                                            +"* You can press enter or click submit button to submit ans\n"
+                                            +"* You can answer only once. However you reset level\n"
+                                            +"* First level carries 10 points\n"
+                                            +"* Second level carries 15 points\n"
+                                            +"* Third level carries 20 points\n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
         );

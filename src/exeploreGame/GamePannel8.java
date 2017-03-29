@@ -520,10 +520,10 @@ public class GamePannel8 extends javax.swing.JPanel {
     }//GEN-LAST:event_undoButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(controlPannel,"* use W A S D keys to move player\n"
+        JOptionPane.showMessageDialog(controlPannel,"* Use W A S D keys to move player\n"
                                             +"* Red dots are your target point\n"
                                             +"* Yellow boxes are to be placed on target points (Red Dot)\n"
-                                            +"* you can undo only the last 3 moves\n"
+                                            +"* You can undo only the last 3 moves\n"
                                             +"* There are total 3 levels\n"
                                             +"* First level carries 30 points\n"
                                             +"* Second level carries 40 points\n"

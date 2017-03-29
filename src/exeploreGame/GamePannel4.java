@@ -591,14 +591,14 @@ public class GamePannel4 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(controlPannel,"* use W A S D keys to move player\n"
-            +"* you and bot will get alternative turns\n"
-            +"* white boxes are to be turned black by visiting them\n"
-            +"* you can visit only adjacent white box\n"
-            +"* each black box carries 1 point\n"
-            +"* you can undo only the last move\n"
-            +"* computer will try to block your move\n"
-            +"* game finishes if you are not able to move further\n"
+        JOptionPane.showMessageDialog(controlPannel,"* Use W A S D keys to move player\n"
+            +"* You and bot will get alternative turns\n"
+            +"* White boxes are to be turned black by visiting them\n"
+            +"* You can visit only adjacent white box\n"
+            +"* Each black box carries 1 point\n"
+            +"* You can undo only the last move\n"
+            +"* Computer will try to block your move\n"
+            +"* Game finishes if you are not able to move further\n"
             ,"Instructions"
             ,JOptionPane.INFORMATION_MESSAGE
         );

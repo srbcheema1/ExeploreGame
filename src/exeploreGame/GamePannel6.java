@@ -622,11 +622,11 @@ public class GamePannel6 extends javax.swing.JPanel {
         snakeTimer.stop();
         if(level>1)
             foodTimer.stop();
-        JOptionPane.showMessageDialog(controlPannel,"* use W A S D keys to move snake\n"
-                                            +"* press spaceBar key to resume if paused\n"
-                                            +"* you can play game as many times u want\n"
-                                            +"* your best score wll be added to final game\n"
-                                            +"* you can switch to other game aafter completing a level\n"
+        JOptionPane.showMessageDialog(controlPannel,"* Use W A S D keys to move snake\n"
+                                            +"* Press spaceBar key to resume if paused\n"
+                                            +"* You can play game as many times you want\n"
+                                            +"* Your best score will be added to final game\n"
+                                            +"* You can switch to other game after completing a level\n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
         );

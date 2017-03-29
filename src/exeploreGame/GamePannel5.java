@@ -63,7 +63,7 @@ public class GamePannel5 extends javax.swing.JPanel {
         
         createBox();//creates boxes
         
-        picnum=(int)(random()*2)+1;
+        picnum=(int)(random()*4)+1;
     //    picnum=2;//debugging
         initBoard();//level one start
         
@@ -435,11 +435,11 @@ public class GamePannel5 extends javax.swing.JPanel {
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
 
-        JOptionPane.showMessageDialog(controlPannel,"* click on the pic adjacent to blank pic to exchange its position\n"
-                                            +"* you can also use W A S D keys to move blank pic in respective direction\n"
-                                            +"* game must be finished within 300 moves\n"
-                                            +"* score(equal to moves left) will only be awarded when whole pic is solved\n"
-                                            +"* max 150 score will be given \n"
+        JOptionPane.showMessageDialog(controlPannel,"* Click on the pic adjacent to blank pic to exchange its position\n"
+                                            +"* You can also use W A S D keys to move blank pic in respective direction\n"
+                                            +"* Game must be finished within 300 moves\n"
+                                            +"* Score(equal to leftover moves) will only be awarded when whole pic is solved\n"
+                                            +"* Max 150 score will be given \n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
         );
@@ -449,7 +449,7 @@ public class GamePannel5 extends javax.swing.JPanel {
     private void newPicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPicButtonActionPerformed
         int temp=picnum;
         while(true){
-        picnum=(int)(random()*2)+1;
+        picnum=(int)(random()*4)+1;
         if(picnum!=temp)break;
         }
         String iconurl;

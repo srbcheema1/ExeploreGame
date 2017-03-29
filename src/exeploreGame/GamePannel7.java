@@ -584,11 +584,11 @@ public class GamePannel7 extends javax.swing.JPanel {
                 + "7) Put specific ball on specific Yellow box that will open a specific Brown box\n"
                 + "8) Current ball shows the current ball in movement\n"
                 + "9) RESET button to reset the game\n"
-                + "10) first level carry 20 points\n"
-                + "11) second level carry 40 points\n"
+                + "10) First level carry 20 points\n"
+                + "11) Second level carry 40 points\n"
                 + "12) If keys not working Or you loose your focus from\n"
                 + "    main game use FOCUS button given in bottom-right";
-        JOptionPane.showMessageDialog(null, str, "INSTRUCTIONS", HEIGHT);
+        JOptionPane.showMessageDialog(controlPannel, str, "INSTRUCTIONS", HEIGHT);
         click++;
     }
     

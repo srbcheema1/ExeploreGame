@@ -642,8 +642,8 @@ public class GamePannel1 extends javax.swing.JPanel {
     }//GEN-LAST:event_box7ActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(jPanel2,"* you will have to make lead of complete the game\n"
-            +"* every lead of one win will give you 10 points\n"
+        JOptionPane.showMessageDialog(jPanel2,"* You will have to win 3 times more than the bot to win\n"
+            +"* Every win will give you 10 points\n"
             ,"Instructions"
             ,JOptionPane.INFORMATION_MESSAGE
         );

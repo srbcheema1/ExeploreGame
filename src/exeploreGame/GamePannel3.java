@@ -219,8 +219,8 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
     }//GEN-LAST:event_resetButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(jPanel2,"* place 8 queens on board\n"
-                                            +"* no queen must be in target position w.r.t other queen\n"
+        JOptionPane.showMessageDialog(jPanel2,"* Place 8 queens on board\n"
+                                            +"* No queen must be in target position w.r.t other queen\n"
                                             +"* 40 points will be awarded for finishing the game\n"
                                             ,"Instructions"
                                             ,JOptionPane.INFORMATION_MESSAGE                                    
