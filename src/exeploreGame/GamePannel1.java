@@ -507,7 +507,7 @@ public class GamePannel1 extends javax.swing.JPanel {
 
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box8ActionPerformed
 
     private void box9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box9ActionPerformed
@@ -524,7 +524,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             movegen(turn);
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box9ActionPerformed
 
     private void box1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1ActionPerformed
@@ -540,7 +540,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             movegen(turn);
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box1ActionPerformed
 
     private void box2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box2ActionPerformed
@@ -556,7 +556,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             movegen(turn);
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box2ActionPerformed
 
     private void box3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box3ActionPerformed
@@ -572,7 +572,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             movegen(turn);
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box3ActionPerformed
 
     private void box4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box4ActionPerformed
@@ -588,7 +588,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             movegen(turn);
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box4ActionPerformed
 
     private void box5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box5ActionPerformed
@@ -606,7 +606,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             showe();
         }
         else
-        JOptionPane.showMessageDialog(null,"Position filled");
+        JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box5ActionPerformed
 
     private void box6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box6ActionPerformed
@@ -622,7 +622,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             movegen(turn);
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box6ActionPerformed
 
     private void box7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box7ActionPerformed
@@ -638,7 +638,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             movegen(turn);
             showe();
         }
-        else JOptionPane.showMessageDialog(null,"Position filled");
+        else JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box7ActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed

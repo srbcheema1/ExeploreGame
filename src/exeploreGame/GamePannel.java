@@ -186,7 +186,7 @@ public class GamePannel extends javax.swing.JPanel {
                     if(hours==0&&minutes==0&&seconds==0) {
                         clockTimer.stop();
                         timerlock=2;
-                        JOptionPane.showMessageDialog(null,"TimeUp");
+                        JOptionPane.showMessageDialog(controlPannel,"TimeUp");
                         card.show(controlPannel,"finalPannel");
                         finalPannel.shader.start();                    }
                     minutes=60;
