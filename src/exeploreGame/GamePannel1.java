@@ -4,12 +4,12 @@ import javax.swing.JOptionPane;
 
 
 public class GamePannel1 extends javax.swing.JPanel {
-    
-    public int comp_wins,bot,me,you_win,turn,filler;
+
+    private int comp_wins,bot,me,you_win,turn;
     int bestScore=0;
-    public int board[][];
+    private int board[][];
     GamePannel gamePannel ;
-    
+
     public GamePannel1(GamePannel gamePannel) {
         this.gamePannel=gamePannel;
         this.turn = 1;
@@ -18,42 +18,33 @@ public class GamePannel1 extends javax.swing.JPanel {
         this.bot=-1;
         this.me=1;
         this.you_win=0;
-        
-        
+
+
         initComponents();
         resetButton.setVisible(false);
     }
-    
-    public int wincheck(){
-       if(board[0][0]==me&&board[1][0]==me&&board[2][0]==me)return me;
-       else if(board[0][1]==me&&board[1][1]==me&&board[2][1]==me)return me;
-       else if(board[0][2]==me&&board[1][2]==me&&board[2][2]==me)return me;
-       else if(board[0][0]==me&&board[0][1]==me&&board[0][2]==me)return me;
-       else if(board[1][0]==me&&board[1][1]==me&&board[1][2]==me)return me;
-       else if(board[2][0]==me&&board[2][1]==me&&board[2][2]==me)return me;
-       else if(board[0][0]==me&&board[1][1]==me&&board[2][2]==me)return me;
-       else if(board[2][0]==me&&board[1][1]==me&&board[0][2]==me)return me;
-        
-       else if(board[0][0]==bot&&board[1][0]==bot&&board[2][0]==bot)return bot;
-       else if(board[0][1]==bot&&board[1][1]==bot&&board[2][1]==bot)return bot;
-       else if(board[0][2]==bot&&board[1][2]==bot&&board[2][2]==bot)return bot;
-       else if(board[0][0]==bot&&board[0][1]==bot&&board[0][2]==bot)return bot;
-       else if(board[1][0]==bot&&board[1][1]==bot&&board[1][2]==bot)return bot;
-       else if(board[2][0]==bot&&board[2][1]==bot&&board[2][2]==bot)return bot;
-       else if(board[0][0]==bot&&board[1][1]==bot&&board[2][2]==bot)return bot;
-       else if(board[2][0]==bot&&board[1][1]==bot&&board[0][2]==bot)return bot;
-        
-       else return 0;   
+
+    private int wincheck(){
+        if(board[0][0] == board[1][0] && board[1][0] == board[2][0]) return board[0][0];
+        else if(board[0][1] == board[1][1] && board[1][1] == board[2][1])return board[0][1];
+        else if(board[0][2] == board[1][2] && board[1][2] == board[2][2])return board[0][2];
+        else if(board[0][0] == board[0][1] && board[0][1] == board[0][2])return board[0][0];
+        else if(board[1][0] == board[1][1] && board[1][1] == board[1][2])return board[1][0];
+        else if(board[2][0] == board[2][1] && board[2][1] == board[2][2])return board[2][0];
+        else if(board[0][0] == board[1][1] && board[1][1] == board[2][2])return board[0][0];
+        else if(board[2][0] == board[1][1] && board[1][1] == board[0][2])return board[2][0];
+
+        else return 0;
     }
-    
-    public int ctfill(){//counts filled boxes
+
+    private int ctfill(){//counts filled boxes
         int ct=0;
         for(int i=0;i<3;i++)
             for(int j=0;j<3;j++)
                 if(board[i][j]!=0) ct++;
         return ct;
     }
-  
+
     public int box(int i,int j){
         if(i==0&&j==0)
             return 1;
@@ -71,8 +62,8 @@ public class GamePannel1 extends javax.swing.JPanel {
         if(i==2&&j==2) return 9;
         return 0;
     }
-    
-    public void movegen(int turn){
+
+    private void movegen(int turn){
         int index = 0,sum=0,n1,n2; int marked[]=new int[9];
         int random;
         for(int i=0;i<3;i++)
@@ -80,17 +71,17 @@ public class GamePannel1 extends javax.swing.JPanel {
                 marked[sum]=board[i][j];
                 sum++;
             }
-        
-        
+
+
         if (marked[4]==0 && ctfill()==0) index=4;
         else if (marked[4]==0 && ctfill()==1) index=4;
 
         else if (marked[4]==1 && ctfill()==1) {
             random=(int)(Math.random()*4);
-        if (random==0 && ctfill()==1) index=2;
-        else if (random==1 && ctfill()==1) index=6;
-        else if (random==2 && ctfill()==1) index=8;
-        else if (random==3 && ctfill()==1) index=0;
+            if (random==0 && ctfill()==1) index=2;
+            else if (random==1 && ctfill()==1) index=6;
+            else if (random==2 && ctfill()==1) index=8;
+            else if (random==3 && ctfill()==1) index=0;
         }
 
         else if(marked[0]==bot && marked[1]==bot && marked[2]==0) index=2;
@@ -102,7 +93,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         else if(marked[6]==bot && marked[7]==bot && marked[8]==0) index=8;
         else if(marked[6]==bot && marked[8]==bot && marked[7]==0) index=7;
         else if(marked[7]==bot && marked[8]==bot && marked[6]==0) index=6;
-        
+
         else if(marked[0]==bot && marked[3]==bot && marked[6]==0) index=6;
         else if(marked[0]==bot && marked[6]==bot && marked[3]==0) index=3;
         else if(marked[3]==bot && marked[6]==bot && marked[0]==0) index=0;
@@ -112,14 +103,14 @@ public class GamePannel1 extends javax.swing.JPanel {
         else if(marked[2]==bot && marked[5]==bot && marked[8]==0) index=8;
         else if(marked[2]==bot && marked[8]==bot && marked[5]==0) index=5;
         else if(marked[5]==bot && marked[8]==bot && marked[2]==0) index=2;
-        
+
         else if(marked[0]==bot && marked[4]==bot && marked[8]==0) index=8;
         else if(marked[0]==bot && marked[8]==bot && marked[4]==0) index=4;
         else if(marked[4]==bot && marked[8]==bot && marked[0]==0) index=0;
         else if(marked[2]==bot && marked[4]==bot && marked[6]==0) index=6;
         else if(marked[2]==bot && marked[6]==bot && marked[4]==0) index=4;
         else if(marked[4]==bot && marked[6]==bot && marked[2]==0) index=2;
-        //other winning
+            //other winning
         else if(marked[0]==me && marked[1]==me && marked[2]==0) index=2;
         else if(marked[0]==me && marked[2]==me && marked[1]==0 ) index=1;
         else if(marked[1]==me && marked[2]==me && marked[0]==0) index=0;
@@ -129,7 +120,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         else if(marked[6]==me && marked[7]==me && marked[8]==0) index=8;
         else if(marked[6]==me && marked[8]==me && marked[7]==0) index=7;
         else if(marked[7]==me && marked[8]==me && marked[6]==0) index=6;
-        
+
         else if(marked[0]==me && marked[3]==me && marked[6]==0) index=6;
         else if(marked[0]==me && marked[6]==me && marked[3]==0) index=3;
         else if(marked[3]==me && marked[6]==me && marked[0]==0) index=0;
@@ -139,7 +130,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         else if(marked[2]==me && marked[5]==me && marked[8]==0) index=8;
         else if(marked[2]==me && marked[8]==me && marked[5]==0) index=5;
         else if(marked[5]==me && marked[8]==me && marked[2]==0) index=2;
-        
+
         else if(marked[0]==me && marked[4]==me && marked[8]==0) index=8;
         else if(marked[0]==me && marked[8]==me && marked[4]==0) index=4;
         else if(marked[4]==me && marked[8]==me && marked[0]==0) index=0;
@@ -149,53 +140,53 @@ public class GamePannel1 extends javax.swing.JPanel {
         else{
             randomfirst();
             this.turn=-turn;
-            
-            return; 
-            
+
+            return;
+
         }
-        
-         switch (index) {
-             case 0:
-                 n1=0;
-                 n2=0;
-                 break;
-             case 1:
-                 n1=0;
-                 n2=1;
-                 break;
-             case 2:
-                 n1=0;
-                 n2=2;
-                 break;
-             case 3:
-                 n1=1;
-                 n2=0;
-                 break;
-             case 4:
-                 n1=1;
-                 n2=1;
-                 break;
-             case 5:
-                 n1=1;
-                 n2=2;
-                 break;
-             case 6:
-                 n1=2;
-                 n2=0;
-                 break;
-             case 7:
-                 n1=2;
-                 n2=1;
-                 break;
-             case 8:
-                 n1=2;
-                 n2=2;
-                 break;
-             default:
-                 n1=0;
-                 n2=0;
-                 break;
-         }
+
+        switch (index) {
+            case 0:
+                n1=0;
+                n2=0;
+                break;
+            case 1:
+                n1=0;
+                n2=1;
+                break;
+            case 2:
+                n1=0;
+                n2=2;
+                break;
+            case 3:
+                n1=1;
+                n2=0;
+                break;
+            case 4:
+                n1=1;
+                n2=1;
+                break;
+            case 5:
+                n1=1;
+                n2=2;
+                break;
+            case 6:
+                n1=2;
+                n2=0;
+                break;
+            case 7:
+                n1=2;
+                n2=1;
+                break;
+            case 8:
+                n1=2;
+                n2=2;
+                break;
+            default:
+                n1=0;
+                n2=0;
+                break;
+        }
 
 
         board[n1][n2]=turn;
@@ -219,21 +210,16 @@ public class GamePannel1 extends javax.swing.JPanel {
         if(box(n1,n2)==9)
             box9.setText("X");
         this.turn=-turn;
-   
+
     }
-    
-    public boolean checkboard(int i,int j){
-        if(board[i][j]==0){
-            return true;
-        }
-        else 
-            return false;
+
+    private boolean checkboard(int i,int j){
+        return board[i][j] == 0;
     }
-    
-    public void randomfirst(){
-        int i,j;
-        i=(int)(Math.random()*3);
-        j=(int)(Math.random()*3);
+
+    private void randomfirst(){
+        int i = (int)(Math.random()*3);
+        int j = (int)(Math.random()*3);
 
         if(board[i][j]==0){
             board[i][j]=-1;
@@ -258,15 +244,15 @@ public class GamePannel1 extends javax.swing.JPanel {
         }
         else if(ctfill()<9)
             randomfirst();
-             
+
     }
-    
-    public void resete(){
+
+    private void resete(){
         for(int i=0;i<3;i++)
             for(int j=0;j<3;j++)
-                 board[i][j]=0;
-       
-        
+                board[i][j]=0;
+
+
         box1.setText("");
         box2.setText("");
         box3.setText("");
@@ -277,14 +263,12 @@ public class GamePannel1 extends javax.swing.JPanel {
         box8.setText("");
         box9.setText("");
     }
-    
-    public void showe(){
+
+    private void showe(){
         int result=wincheck();
         int fill=ctfill();
-        
+
         if(result!=0){
-    
-    
             if(result==me){
                 you_win++;
                 if(you_win-comp_wins==1&&bestScore==0){
@@ -308,9 +292,9 @@ public class GamePannel1 extends javax.swing.JPanel {
                 else{
                     JOptionPane.showMessageDialog(dialog, "you win");
                 }
-                
+
             }
-            else{               
+            else{
                 JOptionPane.showMessageDialog(dialog, "BOT wins");
                 comp_wins++;
             }
@@ -606,7 +590,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             showe();
         }
         else
-        JOptionPane.showMessageDialog(dialog,"Position filled");
+            JOptionPane.showMessageDialog(dialog,"Position filled");
     }//GEN-LAST:event_box5ActionPerformed
 
     private void box6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box6ActionPerformed
@@ -643,9 +627,9 @@ public class GamePannel1 extends javax.swing.JPanel {
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
         JOptionPane.showMessageDialog(jPanel2,"* You will have to win 3 times more than the bot to win\n"
-            +"* Every win will give you 10 points\n"
-            ,"Instructions"
-            ,JOptionPane.INFORMATION_MESSAGE
+                        +"* Every win will give you 10 points\n"
+                ,"Instructions"
+                ,JOptionPane.INFORMATION_MESSAGE
         );
         //controlPannel.grabFocus();//get focus back to control pannel
     }//GEN-LAST:event_helpButtonActionPerformed
