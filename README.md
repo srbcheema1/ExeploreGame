@@ -1,4 +1,9 @@
 # ExeploreGame
+
+ExeploreGame is a set of 8 classic games re-imagined for the current time.  
+Enjoy games ranging from puzzles such as Tic-Tac-Toe to arcade-style play like snake!
+
+
 This game is developed by Team.EXE
 
 Coded using Java.
@@ -11,13 +16,13 @@ Start the program by running MainFrame.java
 
 # Exeplore is a collection of eight games:
   # Tic-Tac-Toe
-The classic game of X's and O's.
+The game of X's and O's.
 ![TTT_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/tictactoe.PNG)
   # Memory Game
-A challenging game of shape memorization.
+A challenging game of memorization.
 ![memory_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/memory.PNG)
-  # Eight Quenn
-Place 8 queens on a chess board such that none may attack each other.
+  # Eight Queen
+Use a chess board as never used before! 8 queens battle it out for royal superiority!
 ![queens_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/queens.PNG)
   # Black vs White
  Play against the computer to claim as many spots as you can before you're boxed in!
@@ -26,7 +31,7 @@ Place 8 queens on a chess board such that none may attack each other.
  A 4x4 sliding puzzle.
  ![puzzle_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/puzzle.PNG)
   # Snake
- The classic game of snake!
+ The good ol' snake.
  ![snake_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/snake.PNG)
   # Balls and Bridges
  Control several balls to open bridges and get any ball to the finish line.
