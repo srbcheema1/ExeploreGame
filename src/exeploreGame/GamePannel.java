@@ -11,11 +11,9 @@ import javax.swing.border.LineBorder;
 
 public class GamePannel extends javax.swing.JPanel {
 
-    int cardPannel=0;//index of card pannel being displayed
-    
-    Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
-    Border lightborder = new LineBorder(Color.lightGray, 1);
-    Border nullborder = new LineBorder(Color.darkGray, 0);
+    final private Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
+    final private Border lightborder = new LineBorder(Color.lightGray, 1);
+    final private Border nullborder = new LineBorder(Color.darkGray, 0);
     
     //gamepanels
     public WelcomePannel welcomePannel;
@@ -32,12 +30,12 @@ public class GamePannel extends javax.swing.JPanel {
     public FinalPannel finalPannel;
     
     
-    CardLayout card=new CardLayout();//layout for controlPannel
+    final private CardLayout card=new CardLayout();//layout for controlPannel
     
     //game variables
-    int hours=2,minutes=0,seconds=0;
-    int timerlock=0; 
-    Timer clockTimer;
+    final int hours=2,minutes=0,seconds=0;
+    final int timerlock=0;
+    final Timer clockTimer;
     int totalScore;
     
     public GamePannel() {
@@ -62,29 +60,29 @@ public class GamePannel extends javax.swing.JPanel {
     public void createGames(){
         welcomePannel=new WelcomePannel(this);
         controlPannel.add(welcomePannel,"welcomePannel");
-        homePannel=new HomePannel(this);
+        final homePannel=new HomePannel(this);
         controlPannel.add(homePannel,"homePannel");
         instructionPannel=new InstructionPannel(this);
         controlPannel.add(instructionPannel,"instructionPannel");
         
-        gamePannel1=new GamePannel1(this);
+        final gamePannel1=new GamePannel1(this);
         controlPannel.add(gamePannel1,"gamePannel1");
-        gamePannel2=new GamePannel2(this);
+        final gamePannel2=new GamePannel2(this);
         controlPannel.add(gamePannel2,"gamePannel2");
-        gamePannel3=new GamePannel3(this);
+        final gamePannel3=new GamePannel3(this);
         controlPannel.add(gamePannel3,"gamePannel3");
-        gamePannel4=new GamePannel4(this);
+        final gamePannel4=new GamePannel4(this);
         controlPannel.add(gamePannel4,"gamePannel4");
-        gamePannel5=new GamePannel5(this);
+        final gamePannel5=new GamePannel5(this);
         controlPannel.add(gamePannel5,"gamePannel5");
-        gamePannel6=new GamePannel6(this);
+        final gamePannel6=new GamePannel6(this);
         controlPannel.add(gamePannel6,"gamePannel6");
-        gamePannel7=new GamePannel7(this);
+        final gamePannel7=new GamePannel7(this);
         controlPannel.add(gamePannel7,"gamePannel7");
-        gamePannel8=new GamePannel8(this);
+        final gamePannel8=new GamePannel8(this);
         controlPannel.add(gamePannel8,"gamePannel8");
         
-        finalPannel=new FinalPannel(this);
+        final finalPannel=new FinalPannel(this);
         controlPannel.add(finalPannel,"finalPannel");
     } //creates Games
     
@@ -95,7 +93,7 @@ public class GamePannel extends javax.swing.JPanel {
     public void openGame(int index){
         switch(index){
             case 1://tic tac toe
-                cardPannel=1;
+                int cardPannel = 1;
                 if(gamePannel1.bestScore<30){
                     card.show(controlPannel,"gamePannel1");
                 }    
@@ -104,7 +102,7 @@ public class GamePannel extends javax.swing.JPanel {
                 }
                 break;
             case 2://memory
-                cardPannel=2;
+                cardPannel =2;
                 if(gamePannel2.bestScore<45){
                     card.show(controlPannel,"gamePannel2");
                     gamePannel2.resetLevel();
@@ -115,7 +113,7 @@ public class GamePannel extends javax.swing.JPanel {
                 } 
                 break;
             case 3://queen8
-                cardPannel=3;
+                cardPannel =3;
                 if(gamePannel3.bestScore<40){
                     card.show(controlPannel,"gamePannel3");
                 }
@@ -124,7 +122,7 @@ public class GamePannel extends javax.swing.JPanel {
                 } 
                 break;
             case 4://black vs white
-                cardPannel=4;
+                cardPannel =4;
                 if(gamePannel4.bestScore<48){
                     card.show(controlPannel,"gamePannel4");
                     gamePannel4.getFocus();
@@ -134,7 +132,7 @@ public class GamePannel extends javax.swing.JPanel {
                 }
                 break;
             case 5://pic 4x4
-                cardPannel=5;
+                cardPannel =5;
                 if(gamePannel5.bestScore<150){
                     card.show(controlPannel,"gamePannel5");
                     gamePannel5.getFocus();
@@ -144,7 +142,7 @@ public class GamePannel extends javax.swing.JPanel {
                 }
                 break;
             case 6://snake
-                cardPannel=6;
+                cardPannel =6;
                 if(gamePannel6.score<5000){
                     card.show(controlPannel,"gamePannel6");
                     gamePannel6.getFocus();
@@ -154,7 +152,7 @@ public class GamePannel extends javax.swing.JPanel {
                 }
                 break;
             case 7://
-                cardPannel=7;
+                cardPannel =7;
                 if(gamePannel7.score<60){
                     card.show(controlPannel,"gamePannel7");
                     gamePannel7.getFocus();
@@ -164,7 +162,7 @@ public class GamePannel extends javax.swing.JPanel {
                 }              
                 break;
             case 8:
-                cardPannel=8;
+                cardPannel =8;
                 if(gamePannel8.score<120){
                     card.show(controlPannel,"gamePannel8");
                     gamePannel8.getFocus();

@@ -20,30 +20,29 @@ import javax.swing.border.LineBorder;
  */
 public class GamePannel4 extends javax.swing.JPanel {
     
-    int board[][] = new int[10][10];//board for values //1 is ccupied
-    int memoryBoard[][] = new int[10][10];//board for last move 
-    int playerX,playerY;
+    private final int board[][] = new int[10][10];//board for values //1 is ccupied
+    final private int memoryBoard[][] = new int[10][10];//board for last move
+    final private int playerX,playerY;
     int turn;//-1 for bot 1 for player
-    int diff=1000,depth;//difficulty
-    int box1x,box1y,box2x,box2y;
+    final private int diff=1000,depth;//difficulty
+    final private int box1x,box1y,box2x,box2y;
     int win=0,levelwin,moves=0,totalmoves=0,memoryMoves,level,maxlevel=3,bestScore=0;
     
     //virtaul
     int vplayerX,vplayerY;
     int vboard[][] = new int[10][10];//board for values //1 is ccupied
-    
-    Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
-    Border lightborder = new LineBorder(Color.lightGray, 1);
-    Border whiteborder = new LineBorder(Color.white, 1);
-    Border nullborder = new LineBorder(Color.darkGray, 0);
-    KeyAdapter keyInputAdapter;
-    GamePannel gamePannel ;
-    
-    JPanel stage = new JPanel();
-    
-    JButton[][] box = new JButton[10][10];
-    CardLayout card=new CardLayout();//layout for controlPannel
-    Timer botTimer;
+
+    final private Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
+    final private Border lightborder = new LineBorder(Color.lightGray, 1);
+    final private Border whiteborder = new LineBorder(Color.white, 1);
+    final private Border nullborder = new LineBorder(Color.darkGray, 0);
+    final private GamePannel gamePannel ;
+
+    final private JPanel stage = new JPanel();
+
+    final private JButton[][] box = new JButton[10][10];
+    final private CardLayout card=new CardLayout();//layout for controlPannel
+    final private Timer botTimer;
     int lock=0;
 
     public GamePannel4(GamePannel gamePannel) {
@@ -61,11 +60,11 @@ public class GamePannel4 extends javax.swing.JPanel {
         controlPannel.setFocusable(true);
         controlPannel.setOpaque(false);//to make buttons transparent
         controlPannel.setFocusTraversalKeysEnabled(false);
-        keyInputAdapter=new KeyAdapter(){
-            public void keyTyped(KeyEvent e){
+        final KeyAdapter keyInputAdapter = new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
                 keyInput(e);
             }
-        };//calls keyInput()
+        };//calls KeyInput()
         controlPannel.addKeyListener(keyInputAdapter);
         
         createBox();//creates boxes

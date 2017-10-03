@@ -16,18 +16,18 @@ import javax.swing.border.LineBorder;
 
 public class GamePannel5 extends javax.swing.JPanel {
 
-    rawBox board[][] = new rawBox[31][31];//board for values
+    final private rawBox board[][] = new rawBox[31][31];//board for values
     int win=0,levelwin=0,movesLeft=300,totalmoves=0,level,maxlevel=1,bestScore=0;
-    
-    Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
-    Border lightborder = new LineBorder(Color.lightGray, 1);
-    Border nullborder = new LineBorder(Color.darkGray, 0);
-    GamePannel gamePannel;
-    
-    JPanel stage = new JPanel();
-    
-    JButton[][] box = new JButton[6][6];
-    CardLayout card=new CardLayout();//layout for controlPannel
+
+    final private Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
+    final private Border lightborder = new LineBorder(Color.lightGray, 1);
+    final private Border nullborder = new LineBorder(Color.darkGray, 0);
+    final private GamePannel gamePannel;
+
+    final private JPanel stage = new JPanel();
+
+    final private JButton[][] box = new JButton[6][6];
+    final private CardLayout card=new CardLayout();//layout for controlPannel
     
     //game variables
     int picnum=0;//randomly generated pic num

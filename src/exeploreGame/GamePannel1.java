@@ -6,9 +6,9 @@ import javax.swing.JOptionPane;
 public class GamePannel1 extends javax.swing.JPanel {
 
     private int comp_wins,bot,me,you_win,turn;
-    int bestScore=0;
+    private int bestScore=0;
     private int board[][];
-    GamePannel gamePannel ;
+    final private GamePannel gamePannel ;
 
     public GamePannel1(GamePannel gamePannel) {
         this.gamePannel=gamePannel;

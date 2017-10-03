@@ -14,11 +14,10 @@ import javax.swing.border.LineBorder;
  * @author srb
  */
 public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
-    int [][] board;
-    int queencount;
-    Border buttonborder=new LineBorder(Color.black,1);
-    queenbutton checker[][]=new queenbutton[8][8];
-    GamePannel gamePannel ;
+    private final int [][] board;
+    private int queencount;
+    private queenbutton checker[][]=new queenbutton[8][8];
+    private final GamePannel gamePannel ;
     int bestScore =0;
 
     public GamePannel3(GamePannel gamePannel) {
@@ -40,6 +39,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
                 {   
                     checker[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/boardblack.jpg")));
                 }
+                final Border buttonborder = new LineBorder(Color.black, 1);
                 checker[i][j].setBorder(buttonborder);
                 cellpanel.add(checker[i][j]);
                checker[i][j].addActionListener(this);
@@ -240,7 +240,7 @@ public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
 
 public class queenbutton extends JButton
 {
-    int value,row,col;
+    private int value,row,col;
     public queenbutton(int r,int c)
     {
         row=r; 

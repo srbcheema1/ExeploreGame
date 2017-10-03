@@ -17,18 +17,18 @@ public class GamePannel2 extends javax.swing.JPanel {
 
     int win=0,levelwin=0,level=1,maxlevel=3,bestScore=0;
     
-    Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
-    Border lightborder = new LineBorder(Color.lightGray, 1);
-    Border nullborder = new LineBorder(Color.darkGray, 0);
-    JLabel imageLabel=new JLabel();
-    JPanel stage = new JPanel();
-    GamePannel gamePannel ;
-    
-    CardLayout card=new CardLayout();//layout for controlPannel
+    final private Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
+    final private Border lightborder = new LineBorder(Color.lightGray, 1);
+    final private Border nullborder = new LineBorder(Color.darkGray, 0);
+    final private JLabel imageLabel=new JLabel();
+    final private JPanel stage = new JPanel();
+    final private GamePannel gamePannel ;
+
+    final private CardLayout card=new CardLayout();//layout for controlPannel
   
     //game variables
-    int maxpics=8,a,b,c,d,e,i,ans=0,pictime=800,lock=0;
-    Timer picTimer;
+    final private int maxpics=8,a,b,c,d,e,i,ans=0,pictime=800,lock=0;
+    final private Timer picTimer;
     
     public GamePannel2(GamePannel gamePannel) {
         initComponents();
