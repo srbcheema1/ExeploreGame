@@ -23,7 +23,7 @@ A challenging game of memorization.
 ![memory_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/memory.PNG)
   # Eight Queen
 Use a chess board as never used before! 8 queens battle it out for royal superiority!
-![queens_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/queens.PNG)
+![queens_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/queen.PNG)
   # Black vs White
  Play against the computer to claim as many spots as you can before you're boxed in!
  ![BvW_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/blackvswhite.PNG)
