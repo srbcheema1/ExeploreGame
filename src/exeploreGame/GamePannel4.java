@@ -64,7 +64,7 @@ public class GamePannel4 extends javax.swing.JPanel {
             public void keyTyped(KeyEvent e) {
                 keyInput(e);
             }
-        };
+        };//calls KeyInput()
         controlPannel.addKeyListener(keyInputAdapter);
         
         createBox();//creates boxes
