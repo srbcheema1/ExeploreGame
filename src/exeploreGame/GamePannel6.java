@@ -17,18 +17,18 @@ import javax.swing.border.LineBorder;
 
 public class GamePannel6 extends javax.swing.JPanel {
 
-    rawBox board[][] = new rawBox[31][31];//board for values
+    final private rawBox board[][] = new rawBox[31][31];//board for values
     int win=0,levelwin=0,score=0,bestScore=0,totalmoves=0,level,maxlevel=3;
-    
-    Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
-    Border lightborder = new LineBorder(Color.lightGray, 1);
-    Border nullborder = new LineBorder(Color.darkGray, 0);
-    GamePannel gamePannel ;
-    
-    JPanel stage = new JPanel();
-    
-    JButton[][] box = new JButton[31][31];
-    CardLayout card=new CardLayout();//layout for controlPannel
+
+    final private Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
+    final private Border lightborder = new LineBorder(Color.lightGray, 1);
+    final private Border nullborder = new LineBorder(Color.darkGray, 0);
+    final private GamePannel gamePannel ;
+
+    final private JPanel stage = new JPanel();
+
+    final private JButton[][] box = new JButton[31][31];
+    final private CardLayout card=new CardLayout();//layout for controlPannel
     
     //game variables
     int snakeDir=1,foodDir=1;

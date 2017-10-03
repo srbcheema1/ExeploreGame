@@ -7,20 +7,18 @@ import java.awt.Color;
  * @author srb
  */
 public class FinalPannel extends javax.swing.JPanel {
-    int shade=0;
-    Thread shader;
-    GamePannel gamePannel;
-    
+    private int shade=0;
+
     public FinalPannel(GamePannel gamePannel) {
         initComponents();
-        this.gamePannel=gamePannel;
+        final GamePannel gamePannel1 = gamePannel;
         myinit();
     }
 
     public void myinit(){
         setBackground(new Color(99,99,99));
-        shader=new Thread(){
-            public void run(){
+        final Thread shader = new Thread() {
+            public void run() {
                 shadeChange();
             }
         };
@@ -62,7 +60,7 @@ public class FinalPannel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        welcomeLabel = new javax.swing.JLabel();
+        final welcomeLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(34, 34, 34));
         setLayout(null);

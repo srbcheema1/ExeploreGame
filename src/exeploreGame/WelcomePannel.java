@@ -8,9 +8,8 @@ import java.awt.Color;
  * @author srb
  */
 public class WelcomePannel extends javax.swing.JPanel {
-    int shade=0;
-    Thread shader;
-    GamePannel gamePannel;
+    private int shade=0;
+    final private GamePannel gamePannel;
     
     public WelcomePannel(GamePannel gamePannel) {
         initComponents();
@@ -19,8 +18,8 @@ public class WelcomePannel extends javax.swing.JPanel {
     }
 
     public void myinit(){
-        shader=new Thread(){
-            public void run(){
+        final Thread shader = new Thread() {
+            public void run() {
                 shadeChange();
             }
         };
