@@ -17,28 +17,28 @@ Start the program by running MainFrame.java
 # Exeplore is a collection of eight games:
   # Tic-Tac-Toe
 The game of X's and O's.
-![TTT_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/tictactoe.PNG)
+![TTT_screenshot](/screenshots/tictactoe.PNG)
   # Memory Game
 A challenging game of memorization.
-![memory_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/memory.PNG)
+![memory_screenshot](/screenshots/memory.PNG)
   # Eight Queen
 Use a chess board as never used before! 8 queens battle it out for royal superiority!
-![queens_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/queen.PNG)
+![queens_screenshot](/screenshots/queen.PNG)
   # Black vs White
  Play against the computer to claim as many spots as you can before you're boxed in!
- ![BvW_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/blackvswhite.PNG)
+ ![BvW_screenshot](/screenshots/blackvswhite.PNG)
   # Puzzle
  A 4x4 sliding puzzle.
- ![puzzle_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/puzzle.PNG)
+ ![puzzle_screenshot](/screenshots/puzzle.PNG)
   # Snake
  The good ol' snake.
- ![snake_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/snake.PNG)
+ ![snake_screenshot](/screenshots/snake.PNG)
   # Balls and Bridges
  Control several balls to open bridges and get any ball to the finish line.
- ![balls_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/ballsNbridges.PNG)
+ ![balls_screenshot](/screenshots/ballsNbridges.PNG)
   # Push Box
  Push each box onto one of the target areas.
- ![boxes_screenshot](https://github.com/srbcheema1/ExeploreGame/blob/master/screenshots/boxes.PNG)
+ ![boxes_screenshot](/screenshots/boxes.PNG)
 
 # Contribute to the development of this game by:
 A. Report Issues, please check if the issue already exists [here](https://github.com/srbcheema1/ExeploreGame/issues).
