@@ -12,7 +12,7 @@ public class ExeploreGame {
                 if(password.compareTo("cheema")==0)break;
         }
         while(true){
-                final userId =JOptionPane.showInputDialog(null,"Enter User Id","user id",JOptionPane.INFORMATION_MESSAGE);
+                final userId =JOptionPane.showInputDialog(null,"Enter User ID","user id",JOptionPane.INFORMATION_MESSAGE);
                 if(userId==null)continue;
                 if(userId.compareTo("")!=0)break;
         }
