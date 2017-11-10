@@ -15,28 +15,28 @@ Alternatively, get an IDE, e.g. Netbeans to run this game.
 Start the program by running MainFrame.java
 
 # Exeplore is a collection of eight games:
-  # Tic-Tac-Toe
+  # Tic-Tac-Toe:
 The game of X's and O's.
 ![TTT_screenshot](/screenshots/tictactoe.PNG)
-  # Memory Game
+  # Memory Game:
 A challenging game of memorization.
 ![memory_screenshot](/screenshots/memory.PNG)
-  # Eight Queen
+  # Eight Queen:
 Use a chess board as never used before! 8 queens battle it out for royal superiority!
 ![queens_screenshot](/screenshots/queen.PNG)
-  # Black vs White
+  # Black vs White:
  Play against the computer to claim as many spots as you can before you're boxed in!
  ![BvW_screenshot](/screenshots/blackvswhite.PNG)
-  # Puzzle
+  # Puzzle:
  A 4x4 sliding puzzle.
  ![puzzle_screenshot](/screenshots/puzzle.PNG)
-  # Snake
+  # Snake:
  The good ol' snake.
  ![snake_screenshot](/screenshots/snake.PNG)
-  # Balls and Bridges
+  # Balls and Bridges:
  Control several balls to open bridges and get any ball to the finish line.
  ![balls_screenshot](/screenshots/ballsNbridges.PNG)
-  # Push Box
+  # Push Box:
  Push each box onto one of the target areas.
  ![boxes_screenshot](/screenshots/boxes.PNG)
 
