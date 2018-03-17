@@ -41,6 +41,6 @@ Use a chess board as never used before! 8 queens battle it out for royal superio
  ![boxes_screenshot](/screenshots/boxes.PNG)
 
 # Contribute to the development of this game by:
-A. Report Issues, please check if the issue already exists [here](https://github.com/srbcheema1/ExeploreGame/issues).
-B. Contribute to the existing issues and issue a pull request.
+A. Report Issues, please check if the issue already exists [here](https://github.com/srbcheema1/ExeploreGame/issues).<br>
+B. Contribute to the existing issues and issue a pull request.<br>
 #Try to contribute to this repository as much as you can to make this game worth of the hard work put into it.
